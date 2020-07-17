@@ -1,0 +1,83 @@
+{
+  "projects": [
+    {
+      "name": "Postcards",
+      "info": {
+        "bgColor": "#C6E5E0",
+        "nameColor": "white",
+        "image": "Postcards.png",
+        "width": "115px",
+        "isComingSoon": false,
+        "primaryColor": "#5AAA9E",
+        "projectCardColor": "#5AAA9E",
+        "isFeatured": false,
+        "isMobile": true,
+        "subtitle": "Mobile Protoype for Adobe Creative Challenge",
+        "infoBits": ["Branding", "Adobe XD", "Wireframing", "UI/UX"],
+        "type": "PROTOTYPE",
+        "productLink": "https://xd.adobe.com/view/341ee82a-4a7c-46a8-8fda-868ea1d5e0f6-614d/?fullscreen",
+        "description": "Design a complete mobile protoype for Adobe Creative Cloud Hackathon. Worked with Adobe XD to realize a high-fidelity prototype that imagined a new form of social media to connect people through Airbnb about their past trips and experiences.",
+        "role": "designer",
+        "team": "3 designers",
+        "problemStatement": "Create a high-quality, funtioning prototype that imagines a way to connect people through Airbnb in order to share past trips and experiences.",
+        "solutionStatement": "Develop Postcards: a mobile app that allows people to post pictures and stories of their adventures by creating 'postcards'. Collect stamps from each location to show off your wandering, explore people's trips from around the world and get inspired to plan your next adventure.",
+        "keyContent": [
+          {
+            "image": "narrativePostcard.png",
+            "title": "Creating a narrative",
+            "description": "A big focus was on the language we used throughout the app. This app was about personal storytelling, and we wanted to prompt the user to feel free to express their narrative."
+          },
+          {
+            "image": "airbnbPostcard.png",
+            "title": "Airbnb",
+            "description": "As Airbnb was the sponsor of this hackathon, we included a main userflow to be creating a postcard based off a previous Airbnb trip that they can select directly from their account."
+          },
+          {
+            "image": "stampPostcard.png",
+            "title": "Stamps!",
+            "description": "Postcards need stamps. Our decision to explicitly include stamp icons in our design was to gamify the app. Our idea is to have users collect stamps from all the places they've visted, or unlock personalized stamps created by the Airbnb hosts they have stayed with."
+          }
+        ],
+        "takeaways": [
+          {
+            "statement": "Building Postcards was a tedious task. As a team, we spent hours deciding how best to create a strong user flow. The result was a stength in designing for the user as well as delievering a product that serves a purpose."
+          },
+          {
+            "statement": "Working soley in Adobe XD, we brought an idea from conception to creation within 36 hours. It was a crashcourse in mastering XD and completing the transition from low to high fidelity wireframes."
+          },
+          {
+            "statement": "While I primarily have designed for web, this hackathon was a great opportunity to design strictly for mobile. It required deep consideration of spacial design and user interaction."
+          }
+        ]
+      }
+    },
+    {
+      "name": "Freetime",
+      "info": {
+        "bgColor": "#40A5AA",
+        "nameColor": "white",
+        "image": "PerformanceDashboard.png",
+        "isComingSoon": true
+      }
+    },
+    {
+      "name": "Former Website",
+      "info": {
+        "bgColor": "#FFE5D9",
+        "nameColor": "black",
+        "image": "FormerSite.png",
+        "isComingSoon": true
+      }
+    },
+    {
+      "name": "Typography Design System",
+      "info": {
+        "bgColor": "#BF9BA7",
+        "nameColor": "white",
+        "image": "Type.png",
+        "width": "205px",
+        "isComingSoon": true
+      }
+    }
+  ]
+}

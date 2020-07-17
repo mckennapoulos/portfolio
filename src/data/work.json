@@ -1,0 +1,112 @@
+{
+  "worklist": [
+    {
+      "name": "Bikebus",
+      "info": {
+        "name": "Bikebus",
+        "bgColor": " #CADBDB",
+        "primaryColor": "#08494B",
+        "projectCardColor": "#08494B",
+        "nameColor": "white",
+        "image": "Bikebus-HP.png",
+        "isFeatured": true,
+        "subtitle": "Marketing Website for Bikebus LLC",
+        "infoBits": ["React", "Takeshape", "Netlify", "UI/UX", "Branding"],
+        "type": "SITE",
+        "productLink": "https://www.bikebus.com/",
+        "description": "As a developer at Scout Studio, I worked on an agile team of other student developers and designers to redesign and develop BikeBus’s brand and website.",
+        "role": "developer",
+        "team": "2 developers, 2 designers and 1 project lead",
+        "problemStatement": "Bikebus needed a well defined brand that can effecitvly convey the values of the CEO and their vision for the company as well as having a clear and defined presence online.",
+        "solutionStatement": "Deliver brand quidelines and produce a finished marketing website with personalized features that can be altered at will with a CMS.",
+        "keyContent": [
+          {
+            "image": "bikebusExperience.png",
+            "title": "Informative content",
+            "description": "One of the main goals for BikeBus was to capture the essence of the experience. Including a page dedicated to showcasing what users can expect when they book a ride enstills confidence in the buyer that what they're purchasing is of high value."
+          },
+          {
+            "image": "brandingBikebus.png",
+            "title": "Branding",
+            "description": "Bikebus is a high-end, but energetic company, and it needed a brand design that reflected that. The choice of neon colors paired with an elegant green marry the two aesthetics together."
+          },
+          {
+            "image": "quoteBikebus.png",
+            "title": "Personalized form",
+            "description": "A personalized quote form was added to ensure that Bikebus has control over what they offer, while still being flexible enough to fit each customer's needs."
+          }
+        ],
+        "takeaways": [
+          {
+            "statement": "When working with a client, it is important to keep their creative desires in mind while also keeping the project realistic for the time frame. Our team faced difficulties when we found ourselves overstepping our skillsets in order to satisfy everything the client asked for. As time went on, we learned how to approach new features with a compromize that suited everyone's abilities."
+          },
+          {
+            "statement": "While desigining and developing for a company, we must keep in mind the future of the company and make sure that the final deliverable is easily scalable."
+          },
+          {
+            "statement": "third takeawya"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Performance Dashboard",
+      "info": {
+        "bgColor": "#F8F8F8",
+        "primaryColor": "#4D4D4D",
+        "projectCardColor": "#4d4d4d",
+        "nameColor": "white",
+        "image": "PerformanceDashboard.png",
+        "isFeatured": true,
+        "subtitle": "Dynamic web app dashboard for Imprivata",
+        "infoBits": ["HTML", "CSS", "User research", "UI/UX"],
+        "type": "VIDEO",
+        "productLink": "performancePortalVideo.mp4",
+        "description": "Fully re-design and develop the current performance test dashboard to be user friendly, focused, and effective for internal use at Imprivata.",
+        "role": "developer & designer",
+        "team": "2 developers (myself and supervisor)",
+        "problemStatement": "The current dashboard is cluttered, data heavy and difficult to understand at a glance.",
+        "solutionStatement": "Fully re-design and develop the current performance test dashboard to be user friendly, focused, and effective for internal use at Imprivata.",
+        "keyContent": [
+          {
+            "image": "navPD.png",
+            "title": "Clear indication of status",
+            "description": "A side navigation bar would solve many of the issues with the current dashboard. The navigation will remain fixed and visible at all times and provide an overall, at-a-glance view of the statuses for each test. Users will know exactly what they are looking at as well as knowing how to get to where they need to go next without much thought."
+          },
+          {
+            "image": "dropdownPD.png",
+            "title": "Dropdown selection",
+            "description": "Dropdown menus work effectively when needing users to select from a large group of data. They preserve space and keep the list organized and easily maneuvered. In addition, grouping the releases by build will lessen the amount of choices a user has at a given time and reduce the time it takes for a user to find what they are looking for."
+          },
+          {
+            "image": "graphsPD.png",
+            "title": "Focused view",
+            "description": "Displaying the results of only 1 - 2 graphs at once will drastically reduce visual clutter. Each test has data for every release, however the importance isn’t the results of each test, but rather how the tests compare to each other over each new release. Therefore, a more effective way of displaying the data is by comparing two releases to each other: a target and a baseline. All tests will contain a status with a percentage change calculated by the different between the target and baseline data. That percentage will create an up facing or down facing arrow and a subtitle of performance boost/decline, respectively."
+          }
+        ],
+        "takeaways": [
+          {
+            "statement": "My skills as a developer grew tremendously while working on the performance dashboard. Apart from learning new coding languagues, I believe my most impactful growth was found in my ability to solve problems independently. When I came across roadblocks, I needed to find solutions by googling and using stack overflow in order to move forward with the project."
+          },
+          {
+            "statement": "Every aspect of this dashboard was created specifically for the Imprivata employees. Through each step of the deisgn process, I would revist the goals we had set for the users and let them be point of guidance for the UI; the application will be uneffective unless it fits the needs of the user."
+          },
+          {
+            "statement": "Coming into this co-op, I had little experience outside of the classroom. Once I jumped onboard with the performance dashboard project, it was quickly clear to me that I was going to have to learn just about everything I needed to do. I had to get used to the feeling of being uncomfortable when I did not know something, and move past it in order to grow. I allowed myself to take the time to learn the skills I needed, so when it came time to develop a new feature, I wasn't stuck in a point of anxiety or worry."
+          }
+        ]
+      }
+    },
+    {
+      "name": "Priceline",
+      "info": {
+        "bgColor": "#AFD5FF",
+        "projectCardColor": "#007AFF",
+        "nameColor": "white",
+        "image": "PricelineHP.png",
+        "featured": false,
+        "isComingSoon": true
+      }
+    }
+  ]
+}

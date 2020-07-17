@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Tiempos Headline Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Tiempos Headline Bold'), url('TiemposHeadline-Bold.woff') format('woff');
+}

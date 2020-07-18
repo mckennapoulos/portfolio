@@ -54,19 +54,104 @@
     {
       "name": "Freetime",
       "info": {
-        "bgColor": "#40A5AA",
+        "bgColor": "#AAD7D9",
         "nameColor": "white",
-        "image": "PerformanceDashboard.png",
-        "isComingSoon": true
+        "image": "FreetimeHome.png",
+        "isComingSoon": false,
+
+
+        "primaryColor": "#40A5AA",
+        "projectCardColor": "#40A5AA",
+        "isFeatured": false,
+        "isMobile": false,
+        "subtitle": "Responsive protoype",
+        "infoBits": ["Branding", "Responsive", "Wireframing", "Research"],
+        "type": "PROTOTYPE",
+        "productLink": "https://xd.adobe.com/view/e6238b44-299e-4a71-5480-7257a806400d-9012/?fullscreen",
+        "description": "An event scheduling site that syncs to your google calendar to see when you have freetime, and notifies you of events of your interest during those breaks in your schedule. Complete a functional prototype at 3 screen sizes that is an effective user interface.",
+        "role": "designer",
+        "team": "none",
+        "problemStatement": "There is no easy solution for people to find events that fit their’s and their friends’ schedules. People who are looking for new kinds of events to attend in their area don’t know where to start without knowing what they want, and when they do find what they like, there is often a lack of notification and the event remains unattended.",
+        "solutionStatement": "Develop Freetime: a responsive site that caters to each user's preferences and provides easy access to upcoming events that they may be interested in. The interface is friendly, simple and easy to follow. The overwhelming nature of searching for events is gone.",
+        "keyContent": [
+          {
+            "image": "FreetimeQuiz.png",
+            "title": "Personalization",
+            "description": "The world of events is vast and daunting. Freetime strives to simplify your search by taking in the users preferences through a short quiz. The quiz asks for past events you have liked and disliked, an opportunity to sync your Spotify/Apple Music to track your favorite artists, and a selection of topics you would be interested in. This information and is complied in a way to target your interests."
+          },
+          {
+            "image": "FreetimeSearch.png",
+            "title": "Minimalist design",
+            "description": "To avoid a cluttered interface, it was a concious choice as a designer to group events in easy to consume cards that show the necessary information. In doing so, this keeps the UI organized and easy to consume at a glance. In addition, search funtionality is grouped by event topic to further focus the search."
+          },
+          {
+            "image": "FreetimeOverlay.png",
+            "title": "Sharing with friends",
+            "description": "Another key component of Freetime is the ability to synn your friends' calendars and be aware of what events they are planning on attending. In the popup of an event card, we see the necessary event information, as well has which of the user's friends have also decided to attend. You may also invite friends to this event and favorite it for later."
+          }
+        ],
+        "takeaways": [
+          {
+            "statement": "Working on Freetime was a great opportunity to practice the design process. I took the effort to conduct user research in order to prompt my idea, hearing from my target audience about what they lack and like about their current event searching habits, and then user testing throughout the remainder of the design process from low-fi wireframing to the final product. Each step brought me further insight on to how to improve my product."
+          },
+          {
+            "statement": "When designing a responsive site, it is imperative to consider how the information can manipulated to be display on smaller screens like tablet and mobile, while still serving the same purpose as it does on desktop."
+          },
+          {
+            "statement": "Designing for tablet and mobile requires more considerations in the user interactions. Without the ability to hover a cursor, features must be obviously clickable. In addition, navigation can be difficult to understand and there must be a clear indication to the user of where they are in the app."
+          }
+        ]
       }
     },
     {
       "name": "Former Website",
       "info": {
-        "bgColor": "#FFE5D9",
+        "bgColor": "#FFEBE2",
         "nameColor": "black",
         "image": "FormerSite.png",
-        "isComingSoon": true
+        "isComingSoon": false,
+
+
+        "primaryColor": "#000",
+        "projectCardColor": "#FFD0BA",
+        "isFeatured": false,
+        "isMobile": false,
+        "subtitle": "Web development and design",
+        "infoBits": ["Javascript", "HTML", "CSS", "Branding"],
+        "type": "None",
+        "description": "A first attempt at building and designing a portfolio website adn developing a personal brand.",
+        "role": "deeveloper and designer",
+        "team": "none",
+        "problemStatement": "As a student designer and developer, I need a portfolio website to showcase my work that is dynamic and adaptable for future projects.",
+        "solutionStatement": "Develop a website that is functional as an interesting portfolio website while also showcasing my personal style and design.",
+        "keyContent": [
+          {
+            "image": "PersonalInteractive.png",
+            "title": "User interaction",
+            "description": "I aimed to provide a whimsical feel to my website would engage users as they interacted with it. This came about in ways of intersting hover effects and clicking through a blown up version of my previus logo to uncover facts about myself. "
+          },
+          {
+            "image": "PersonalCaseStudy.png",
+            "title": "Casestudies",
+            "description": "Ceating a case study and separating the main points into a side navigation for each project will streamline the process for viewers to find what they are looking for. Instead of a long description at the beginning followed by example photos, the process text will be integrated with the photos to demonstrate the design process."
+          },
+          {
+            "image": "PersonalBranding.png",
+            "title": "Branding",
+            "description": "A major part of redesigning my portfolio website was finding a strong personal style. I wanted a design that would be consistent, expandable, and minimal. I started first with a color palette. The chosen colors were a great selection for a young, cool-toned theme. The base would remain neutral and the bright colors were eye-popping enough for details. For my typeface, I wanted a rounded, wide spaced font to soften the look and enhance the whitespace onscreen. Overall, I wanted my site to feel calm and inviting."
+          }
+        ],
+        "takeaways": [
+          {
+            "statement": "Developing a portfolio website is an escape to practice creative freedom and practice new techniques."
+          },
+          {
+            "statement": "When discussion your past projects, it is important to be concise and consumable for the user. This is site is primarily for potential employers, and it is necessary for them to be able to understand the work and your role in it through developed case studies."
+          },
+          {
+            "statement": "Being my first personal development project, My biggest takeaway was that it is important to remember that design is fun! Sometimes it is easy to get stressed about making every project 'perfect' and obsess over trying to please everyone. Working on this project, I always felt that there was more that could be added and needed to remind myself that it was okay to accept it as is. A portfolio is a work in progress, and so am I. This website takes form of whatever I like and it is a free space to try new things, fail, and have fun while figuring it out."
+          }
+        ]
       }
     },
     {

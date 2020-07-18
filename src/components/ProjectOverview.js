@@ -119,6 +119,7 @@ export const ProjectOverview = ({
                 width: "max-content",
                 marginLeft: "-6px",
                 textDecoration: "none",
+                color: brandBlack
               }}
             >
               <NavText>

@@ -1,3 +1,33 @@
+.router_link {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "franklin-gothic-urw", sans-serif;
+  font-weight: 500;
+  color: #212121;
+}
+.router_link:hover {
+  color: #ff1178;
+  cursor: pointer;
+}
+.router_link:visited {
+  color: none;
+}
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  -webkit-transform: translateX(-5px) translateY(-5px);
+  -moz-transform: translateX(-5px) translateY(-5px);
+  -ms-transform: translateX(-5px) translateY(-5px);
+  -o-transform: translateX(-5px) translateY(-5px);
+  transform: translateX(-5px) translateY(-5px);
+}
+
+.intro {
+  width: inherit;
+}
+
 .navlink {
   color: inherit;
   text-decoration: none;

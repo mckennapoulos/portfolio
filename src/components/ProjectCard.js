@@ -11,7 +11,7 @@ export const Card = styled.div`
   margin-bottom: 50px;
 
   :hover {
-    &::after {
+    &:after {
       content: "";
       width: -webkit-fill-available;
       height: inherit;
@@ -23,9 +23,7 @@ export const Card = styled.div`
       border: solid 1px ${(props) => props.color};
     }
   }
-`;
-
-// box-shadow: 4px 10px 5px #D6D6D6;
+`
 
 export const CardPreview = styled.img`
   width: ${(props) => (props.width ? props.width : "60%")};
@@ -33,7 +31,7 @@ export const CardPreview = styled.img`
   position: absolute;
   bottom: -1px;
   right: 10px;
-`;
+`
 
 export const ProjectCard = ({ bgColor, nameColor, name, imagePath, width }) => {
   return (

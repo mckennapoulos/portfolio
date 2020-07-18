@@ -74,7 +74,11 @@ export const Portfolio = ({ workList, projectList }) => {
               <ProjectCard
                 key={i}
                 name={work.name}
-                bgColor={work.info.bgColor}
+                bgColor={
+                  work.info.projectCardColor
+                    ? work.info.projectCardColor
+                    : work.info.bgColor
+                }
                 nameColor={work.info.nameColor}
                 imagePath={work.info.image}
                 width={work.info.width ? work.info.width : null}

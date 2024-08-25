@@ -1,10 +1,10 @@
-import { Heading } from "../text";
 import Image from "next/image";
 import GreenStar from "../../../../public/icons/green-star.svg";
+import { Heading } from "@/app/common/text";
 
 export function Hero() {
   return (
-    <div className="bg-tertiary rounded-2xl md:rounded-[30px] lg:rounded-[40px]">
+    <div className="bg-tertiary rounded-2xl md:rounded-[30px] lg:rounded-[40px] mb-6">
       <Heading
         type="h1"
         classnames="w-full text-5xl xs:text-[16cqw] 2xl:text-9xl px-2 pt-5 md:pt-8 lg:pt-12 leading-[.8]"

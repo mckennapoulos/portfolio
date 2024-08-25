@@ -10,9 +10,13 @@ export function Heading({ type, variant, children, classnames }) {
       );
       return <h1 className={cx}>{children}</h1>;
     case "h2":
-      cx = twMerge(`font-sans uppercase tracking-tighter text-2xl`, classnames);
+      cx = twMerge(`font-sans uppercase tracking-tight text-2xl`, classnames);
       return <h2 className={cx}>{children}</h2>;
     case "h3":
-      return <h3 className="font-sans">{children}</h3>;
+      cx = twMerge(
+        `font-sans uppercase font-bold tracking-tight text-2xl text-primary`,
+        classnames
+      );
+      return <h3 className={cx}>{children}</h3>;
   }
 }

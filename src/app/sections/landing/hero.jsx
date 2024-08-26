@@ -4,7 +4,7 @@ import { Heading } from "@/app/common/text";
 
 export function Hero() {
   return (
-    <div className="bg-tertiary rounded-2xl md:rounded-[30px] lg:rounded-[40px] mb-6">
+    <div className="bg-tertiary rounded-2xl md:rounded-[30px] lg:rounded-[40px] mb-7">
       <Heading
         type="h1"
         classnames="w-full text-5xl xs:text-[16cqw] 2xl:text-9xl px-2 pt-5 md:pt-8 lg:pt-12 leading-[.8]"
@@ -18,7 +18,7 @@ export function Hero() {
         >
           Poulos
         </Heading>
-        <div className="px-3.5 sm:px-0 pt-1.5 md:ml-1 md:mt-[3.25cqw] 2xl:mt-[70px]">
+        <div className="px-3.5 md:px-0 pt-1.5 md:ml-2 lg:ml-3 md:mt-[3.25cqw] 2xl:mt-[70px]">
           <div className="flex items-center">
             <Heading
               type="h2"

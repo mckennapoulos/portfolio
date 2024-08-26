@@ -1,7 +1,25 @@
-import { Heading } from "@/app/common/text";
+import { Heading, Paragraph } from "@/app/common/text";
 import { Hero } from "./hero";
+import { SkillsGrid } from "./skillsGrid";
 
 function Landing() {
+  const skills = [
+    "HTML",
+    "CSS/SASS",
+    "Typescript",
+    "React",
+    "Tailwind CSS",
+    "Javascript",
+    "Content Management Systems",
+    "GraphQL",
+    "Java",
+    "Adobe Create Suite",
+    "Jest + Automation Testing",
+    "Git/Github",
+    "Figma",
+    "RESTful APIs",
+    "WCAG Best Practices",
+  ];
   return (
     <>
       <Hero />
@@ -20,7 +38,20 @@ function Landing() {
           practices
           <br className="hidden 2xl:block" /> top of mind.
         </Heading>
+        <Paragraph classnames="w-full md:w-8/12 mt-4 mb-8">
+          My goal is to bring your ideas to life in a digital space. From brand
+          identity development to outlining intuitive user experiences and
+          complete web development, I am passionate about building personalized
+          products for clients. Given my degree in Computer Science and Design{" "}
+          <span className="italic">
+            (concentration in Interaction Design and Web Development)
+          </span>{" "}
+          and over 6 years of design and development experience, I have fluency
+          in the tools and skills needed to architect and deliver high-quality
+          features.
+        </Paragraph>
       </div>
+      <SkillsGrid skills={skills} />
     </>
   );
 }

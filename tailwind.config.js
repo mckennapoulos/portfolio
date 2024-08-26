@@ -34,6 +34,7 @@ module.exports = {
         primary: "#b74e36",
         secondary: "#c1c55e",
         tertiary: "#eeebe7",
+        background: "#f5f3f1",
       },
     },
   },

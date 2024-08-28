@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-export function Heading({ type, children, classnames }) {
+export function Heading({ type, children, classnames, serif }) {
   let cx;
   switch (type) {
     case "h1":
@@ -10,7 +10,12 @@ export function Heading({ type, children, classnames }) {
       );
       return <h1 className={cx}>{children}</h1>;
     case "h2":
-      cx = twMerge(`font-sans uppercase tracking-tight text-2xl`, classnames);
+      cx = twMerge(
+        serif
+          ? `font-serif normal-case text-[36px] leading-[54px] lg:text-5xl`
+          : `font-sans uppercase tracking-tight text-2xl`,
+        classnames,
+      );
       return <h2 className={cx}>{children}</h2>;
     case "h3":
       cx = twMerge(

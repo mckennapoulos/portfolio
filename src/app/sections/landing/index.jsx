@@ -25,10 +25,7 @@ function Landing() {
       <Hero />
       <div className="">
         <Heading type="h3">Let's work together</Heading>
-        <Heading
-          type="h2"
-          classnames="font-serif normal-case text-4xl lg:text-5xl tracking-normal w-full md:w-9/12"
-        >
+        <Heading type="h2" serif={true} classnames="w-full md:w-9/12">
           I craft custom digital spaces using
           <br className="hidden 2xl:block" />{" "}
           <span className="italic">thoughtful</span> design,{" "}

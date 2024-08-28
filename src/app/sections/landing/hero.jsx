@@ -1,5 +1,5 @@
 import Image from "next/image";
-import GreenStar from "../../../../public/icons/green-star.svg";
+import StarSecondary from "../../../../public/icons/star-secondary.svg";
 import { Heading } from "@/app/common/text";
 
 export function Hero() {
@@ -27,7 +27,7 @@ export function Hero() {
               San Diego
             </Heading>
             <Image
-              src={GreenStar}
+              src={StarSecondary}
               alt="Green star icon"
               className="mb-[2px]"
               width="16"

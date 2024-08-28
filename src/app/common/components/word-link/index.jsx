@@ -1,5 +1,5 @@
-import { Heading, Paragraph } from "@/app/common/text";
-import RedStar from "../../../../../public/icons/red-star.svg";
+import { Heading } from "@/app/common/text";
+import StarPrimary from "../../../../../public/icons/star-primary.svg";
 import Image from "next/image";
 
 export function WordLink({ words }) {
@@ -10,7 +10,7 @@ export function WordLink({ words }) {
           <div key={i} className="flex items-baseline pr-2">
             {i > 0 && (
               <Image
-                src={RedStar}
+                src={StarPrimary}
                 alt="Red star icon"
                 className="mr-2"
                 width="auto"

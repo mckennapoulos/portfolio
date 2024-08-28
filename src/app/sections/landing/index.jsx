@@ -21,7 +21,7 @@ function Landing() {
     "WCAG Best Practices",
   ];
   return (
-    <>
+    <div className="mb-32">
       <Hero />
       <div className="">
         <Heading type="h3">Let's work together</Heading>
@@ -52,7 +52,7 @@ function Landing() {
         </Paragraph>
       </div>
       <SkillsGrid skills={skills} />
-    </>
+    </div>
   );
 }
 

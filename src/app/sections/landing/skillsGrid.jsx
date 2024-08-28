@@ -26,7 +26,6 @@ export function SkillsGrid({ skills }) {
           </div>
         );
       })}
-      ;
     </div>
   );
 }

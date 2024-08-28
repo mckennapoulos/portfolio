@@ -1,8 +1,8 @@
 import Image from "next/image";
-import StarSecondary from "../../../../public/icons/star-secondary.svg";
+import StarSecondary from "../../../../../public/icons/star-secondary.svg";
 import { Heading } from "@/app/common/text";
 
-export function Hero() {
+function Hero() {
   return (
     <div className="bg-tertiary rounded-2xl md:rounded-[30px] lg:rounded-[40px] mb-7">
       <Heading
@@ -46,3 +46,5 @@ export function Hero() {
     </div>
   );
 }
+
+export default Hero;

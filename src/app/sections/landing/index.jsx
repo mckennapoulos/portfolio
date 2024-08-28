@@ -1,6 +1,6 @@
 import { Heading, Paragraph } from "@/app/common/text";
-import { Hero } from "./hero";
-import { SkillsGrid } from "./skillsGrid";
+import Hero from "./hero";
+import Checkerboard from "./checkerboard";
 
 function Landing() {
   const skills = [
@@ -51,7 +51,7 @@ function Landing() {
           features.
         </Paragraph>
       </div>
-      <SkillsGrid skills={skills} />
+      <Checkerboard skills={skills} />
     </div>
   );
 }

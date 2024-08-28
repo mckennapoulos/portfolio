@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Heading, Paragraph } from "../../text";
-import { WordLink } from "../word-link";
+import { Heading, Paragraph } from "../../../common/text";
+import { WordLink } from "../../../common/components/word-link";
 import PreviewImg from "../../../../../public/images/beach-break-preview.png";
 import { twMerge } from "tailwind-merge";
-import { Arrow } from "../../link";
+import { Arrow } from "../../../common/link";
 
 const PreviewImage = ({ classnames }) => (
   <Image

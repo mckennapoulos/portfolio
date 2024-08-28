@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-export function SkillsGrid({ skills }) {
+export function SkillsCheckerboard({ skills }) {
   const checkerboard =
     "bg-white [&:nth-child(4n+1)]:bg-tertiary [&:nth-child(4n)]:bg-tertiary";
   const smCheckerboard =
@@ -29,3 +29,5 @@ export function SkillsGrid({ skills }) {
     </div>
   );
 }
+
+export default SkillsCheckerboard;

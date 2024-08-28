@@ -1,4 +1,4 @@
-import ProjectCard from "@/app/common/components/project-card";
+import ProjectCard from "./card";
 import { Heading, Paragraph } from "@/app/common/text";
 
 const projects = [
@@ -51,9 +51,9 @@ const projects = [
   },
 ];
 
-export function Projects() {
+function Projects() {
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-between">
+    <div className="flex flex-col mb-32 lg:flex-row lg:justify-between">
       <div className="flex-col w-full lg:w-3/12 mb-5 lg:mb-auto">
         <Heading type="h3" classnames="mb-5 lg:mb-10">
           Projects
@@ -77,3 +77,5 @@ export function Projects() {
     </div>
   );
 }
+
+export default Projects;

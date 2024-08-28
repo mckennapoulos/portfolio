@@ -14,13 +14,13 @@ export function SkillsCheckerboard({ skills }) {
           <div
             key={i}
             className={twMerge(
-              "flex w-full h-20 md:h-24 text-center items-center",
+              "flex h-20 w-full items-center text-center md:h-24",
               checkerboard,
               smCheckerboard,
-              xlCheckerboard
+              xlCheckerboard,
             )}
           >
-            <p className="font-serif italic text-primary text-2xl md:text-4xl font-extrabold leading-[1] m-auto p-2">
+            <p className="m-auto p-2 font-serif text-2xl font-extrabold italic leading-[1] text-primary md:text-4xl">
               {skill}
             </p>
           </div>

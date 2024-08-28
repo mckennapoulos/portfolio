@@ -12,8 +12,8 @@ const PreviewImage = ({ classnames }) => (
     width="auto"
     height="auto"
     className={twMerge(
-      "border-2 border-solid border-secondary mb-2 md:opacity-0 md:group-hover:opacity-100 md:group-hover:translate-y-[-3px] md:group-hover:drop-shadow-previewImg md:group-hover:translate-x-[2px] transition ease-in-out duration-500",
-      classnames
+      "mb-2 border-2 border-solid border-secondary transition duration-500 ease-in-out md:opacity-0 md:group-hover:translate-x-[2px] md:group-hover:translate-y-[-3px] md:group-hover:opacity-100 md:group-hover:drop-shadow-previewImg",
+      classnames,
     )}
   />
 );
@@ -25,7 +25,7 @@ const Content = ({ title, href, description, categories }) => {
     <div className="p-7 xl:p-8">
       <div className="mb-3">
         <div>
-          <div className="flex justify-between items-start">
+          <div className="flex items-start justify-between">
             <PreviewImage classnames="block xl:hidden mb-5" />
             {href && (
               <Arrow classnames="block md:hidden group-hover:translate-x-[5px]" />
@@ -52,7 +52,7 @@ const Content = ({ title, href, description, categories }) => {
 
 function Card(props) {
   return (
-    <div className="group relative w-full bg-background border-solid border border-secondary rounded-2xl  hover:drop-shadow-base hover:cursor-pointer hover:translate-y-[-6px] hover:translate-x-[6px] transition ease-in-out duration-500">
+    <div className="group relative w-full rounded-2xl border border-solid border-secondary bg-background transition duration-500 ease-in-out hover:translate-x-[6px] hover:translate-y-[-6px] hover:cursor-pointer hover:drop-shadow-project">
       {props.href ? (
         <a href={props.href} target="_blank">
           <Content {...props} />

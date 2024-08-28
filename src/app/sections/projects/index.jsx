@@ -53,8 +53,8 @@ const projects = [
 
 function Projects() {
   return (
-    <div className="flex flex-col mb-32 lg:flex-row lg:justify-between">
-      <div className="flex-col w-full lg:w-3/12 mb-5 lg:mb-auto">
+    <div className="mb-32 flex flex-col lg:flex-row lg:justify-between">
+      <div className="mb-5 w-full flex-col lg:mb-auto lg:w-3/12">
         <Heading type="h3" classnames="mb-5 lg:mb-10">
           Projects
         </Heading>
@@ -69,7 +69,7 @@ function Projects() {
           Visit the live links or click into a case study to learn more.
         </Paragraph>
       </div>
-      <div className="grid lg:grid-cols-2 w-full lg:w-8/12 gap-4">
+      <div className="grid w-full gap-4 lg:w-8/12 lg:grid-cols-2">
         {projects.map((project, i) => {
           return <ProjectCard key={i} {...project} />;
         })}

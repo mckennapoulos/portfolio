@@ -1,3 +1,4 @@
+import Contact from "./sections/contact";
 import Landing from "./sections/landing";
 import Projects from "./sections/projects";
 import Resume from "./sections/resume";
@@ -8,6 +9,7 @@ export default function Home() {
       <Landing />
       <Projects />
       <Resume />
+      <Contact />
     </main>
   );
 }

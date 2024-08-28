@@ -36,6 +36,13 @@ module.exports = {
         tertiary: "#eeebe7",
         background: "#f5f3f1",
       },
+      dropShadow: {
+        base: "-6px 6px 0px rgba(193, 197, 94, 1)",
+        previewImg: "-3px 3px 5px rgba(11, 27, 71, .20)",
+      },
+      transitionProperty: {
+        shadow: "drop-shadoww",
+      },
     },
   },
   plugins: [],

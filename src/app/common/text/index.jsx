@@ -18,6 +18,15 @@ export function Heading({ type, variant, children, classnames }) {
         classnames
       );
       return <h3 className={cx}>{children}</h3>;
+    case "h4":
+      cx = twMerge(
+        `font-sans text-2xl md:text-3xl pb-1 md:pb-auto`,
+        classnames
+      );
+      return <h4 className={cx}>{children}</h4>;
+    case "h5":
+      cx = twMerge(`font-sans uppercase text-base text-primary`, classnames);
+      return <h5 className={cx}>{children}</h5>;
   }
 }
 

@@ -7,9 +7,15 @@ export function WordLink({ words }) {
     <div className="flex flex-wrap">
       {words.map((word, i) => {
         return (
-          <div key={i} className="flex mr-2 ">
+          <div key={i} className="flex items-baseline pr-2">
             {i > 0 && (
-              <Image src={RedStar} alt="Red star icon" className="mr-2" />
+              <Image
+                src={RedStar}
+                alt="Red star icon"
+                className="mr-2"
+                width="auto"
+                height="auto"
+              />
             )}
             <Heading type="h5">{word}</Heading>
           </div>

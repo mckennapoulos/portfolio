@@ -1,6 +1,6 @@
 import Image from "next/image";
-import PrimaryArrow from "../../../../public/icons/arrow-primary.svg";
-import ArrowSvg from "../../../../public/icons/arrow.svg";
+import PrimaryArrow from "../../../public/icons/arrow-primary.svg";
+import ArrowSvg from "../../../public/icons/arrow.svg";
 import { twMerge } from "tailwind-merge";
 
 export const Arrow = ({ variant, classnames }) => {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Heading, Paragraph } from "../../../_components/text";
 import { WordLink } from "../../../_components/word-link";
-import PreviewImg from "../../../../../public/images/beach-break-preview.png";
+import PreviewImg from "../../../../public/images/beach-break-preview.png";
 import { twMerge } from "tailwind-merge";
 import { Arrow } from "../../../_components/link";
 

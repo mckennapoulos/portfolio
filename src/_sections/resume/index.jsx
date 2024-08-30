@@ -1,6 +1,6 @@
-import { Heading, Paragraph } from "@/app/_components/text";
+import { Heading, Paragraph } from "@/_components/text";
 import ExperienceCard from "./card";
-import { Link } from "@/app/_components/link";
+import { Link } from "@/_components/link";
 
 const ResumeContent = [
   {

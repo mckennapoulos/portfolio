@@ -1,7 +1,7 @@
 "use client";
 
-import Pills from "@/app/_components/pill";
-import { Heading, Label, Paragraph } from "@/app/_components/text";
+import Pills from "@/_components/pill";
+import { Heading, Label, Paragraph } from "@/_components/text";
 import { useSpring, animated } from "@react-spring/web";
 import { useState } from "react";
 import useMeasure from "react-use-measure";

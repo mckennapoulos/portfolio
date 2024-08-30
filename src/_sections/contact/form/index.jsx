@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/app/_components/button";
+import Button from "@/_components/button";
 import { useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 

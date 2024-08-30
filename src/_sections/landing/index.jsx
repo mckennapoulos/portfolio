@@ -1,4 +1,4 @@
-import { Heading, Paragraph } from "@/app/_components/text";
+import { Heading, Paragraph } from "@/_components/text";
 import Hero from "./hero";
 import Checkerboard from "./checkerboard";
 

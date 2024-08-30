@@ -1,6 +1,6 @@
 import Image from "next/image";
-import StarSecondary from "../../../../../public/icons/star-secondary.svg";
-import { Heading } from "@/app/_components/text";
+import StarSecondary from "../../../../public/icons/star-secondary.svg";
+import { Heading } from "@/_components/text";
 
 function Hero() {
   return (

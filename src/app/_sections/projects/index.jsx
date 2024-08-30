@@ -1,5 +1,5 @@
 import ProjectCard from "./card";
-import { Heading, Paragraph } from "@/app/common/text";
+import { Heading, Paragraph } from "@/app/_components/text";
 
 const projects = [
   {

@@ -1,5 +1,5 @@
-import { Heading } from "@/app/common/text";
-import StarPrimary from "../../../../../public/icons/star-primary.svg";
+import { Heading } from "@/app/_components/text";
+import StarPrimary from "../../../../public/icons/star-primary.svg";
 import Image from "next/image";
 
 export function WordLink({ words }) {

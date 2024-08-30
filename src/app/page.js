@@ -1,7 +1,7 @@
-import Contact from "./sections/contact";
-import Landing from "./sections/landing";
-import Projects from "./sections/projects";
-import Resume from "./sections/resume";
+import Contact from "./_sections/contact";
+import Landing from "./_sections/landing";
+import Projects from "./_sections/projects";
+import Resume from "./_sections/resume";
 
 export default function Home() {
   return (

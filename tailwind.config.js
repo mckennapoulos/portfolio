@@ -46,6 +46,21 @@ module.exports = {
         shadow: "drop-shadow",
         height: "max-height",
       },
+      keyframes: {
+        movein: {
+          "0%": { opacity: "0", transform: "translateX(120px)" },
+          "75%": { opacity: "1" },
+          "100%": { transform: "translateX(0px)" },
+        },
+        moveup: {
+          "0%": { opacity: "0", transform: "translatey(50px)" },
+          "100%": { opacity: "1", transform: "translatey(0px)" },
+        },
+      },
+      animation: {
+        movein: "movein 3s ease-in-out ",
+        moveup: "moveup 3s ease-in-out ",
+      },
     },
   },
   plugins: [],

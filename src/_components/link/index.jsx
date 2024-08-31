@@ -23,16 +23,24 @@ export const Arrow = ({ variant, classnames }) => {
   }
 };
 
-export function Link({ location, children, classnames }) {
+export function Link({
+  location,
+  children,
+  classnames,
+  arrowClass,
+  linkClass,
+}) {
   const cx = twMerge("group flex items-baseline", classnames);
+  const linkCx = twMerge(
+    "font-sans font-bold text-primary hover:cursor-pointer hover:underline",
+    linkClass,
+  );
   return (
     <div className={cx}>
       <a href={location} target="_blank">
-        <span className="font-sans font-bold text-primary hover:cursor-pointer hover:underline">
-          {children}
-        </span>
+        <span className={linkCx}>{children}</span>
       </a>
-      <Arrow variant="primary" />
+      <Arrow variant="primary" classnames={arrowClass} />
     </div>
   );
 }

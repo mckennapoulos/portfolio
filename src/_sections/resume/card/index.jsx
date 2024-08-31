@@ -18,7 +18,7 @@ const CompanyLink = ({ href, children }) => {
   return children;
 };
 
-function Card({ title, date, description, company, tech }) {
+function Card({ title, date, description, company, tech, key }) {
   const [isOpen, setIsOpen] = useState(false);
   const [ref, bounds] = useMeasure();
 
@@ -34,6 +34,7 @@ function Card({ title, date, description, company, tech }) {
   const cx = twMerge(baseStyles, hoverStyles, isOpen && openStyles);
   return (
     <div
+      key={key}
       onClick={() => {
         setIsOpen(!isOpen);
       }}

@@ -19,7 +19,7 @@ export function Heading({ type, children, classnames, serif }) {
       return <h2 className={cx}>{children}</h2>;
     case "h3":
       cx = twMerge(
-        `font-sans uppercase font-bold tracking-tight text-base md:text-2xl text-primary pb-2 md:pb-auto`,
+        `font-sans uppercase font-bold tracking-tight text-xl md:text-2xl text-primary pb-2 md:pb-auto`,
         classnames,
       );
       return <h3 className={cx}>{children}</h3>;

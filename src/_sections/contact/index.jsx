@@ -5,22 +5,18 @@ import Form from "./form";
 import Marquee from "react-fast-marquee";
 import PrimaryStar from "../../../public/icons/star-primary.svg";
 import Image from "next/image";
-import ConfettiExplosion from "react-confetti-explosion";
-import { useState } from "react";
-import Button from "@/_components/button";
-import { ConfettiAnimation, useConfettiAnimation } from "./confetti";
+import { useConfettiAnimation } from "./confetti";
 import Confetti from "react-confetti";
 
 function Contact() {
-  const [isExploding, setIsExploding] = useState(true);
   const { showConfetti, handleButtonClick } = useConfettiAnimation();
   return (
-    <div className="mb-32 flex w-full flex-col">
-      <div className="mb-8">
+    <div className="mb-10 flex w-full flex-col">
+      <div className="mb-10">
         <Marquee autoFill>
           <div className="flex items-center">
             <span className="mr-5 font-sans text-2xl font-bold uppercase tracking-tight text-primary">
-              Let's work togther
+              Let's work together
             </span>
             <Image src={PrimaryStar} alt="Primary star icon" className="mr-5" />
           </div>

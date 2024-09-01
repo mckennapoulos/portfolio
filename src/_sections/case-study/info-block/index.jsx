@@ -36,7 +36,7 @@ function InfoBlock({ description, tech, team: { role, count }, duration }) {
                       <Image
                         src={MemberIcon}
                         alt="Human Icon"
-                        className="ml-1"
+                        className="ml-1 w-[14px] md:w-auto"
                       />
                     </div>
                   );

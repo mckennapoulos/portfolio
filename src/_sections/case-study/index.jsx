@@ -3,7 +3,7 @@ import Image from "next/image";
 import batlMockup from "../../../public/mockup/BATL_mockup.svg";
 import InfoBlock, { InfoGroup } from "./info-block";
 import { Link } from "@/_components/link";
-import Button from "@/_components/button";
+import DeepDive from "./deep-dive";
 
 const BATLCaseStudy = {
   id: 2,
@@ -29,7 +29,7 @@ const BATLCaseStudy = {
 function CaseStudy() {
   return (
     <div>
-      <div className="flex w-full flex-col items-start lg:flex-row">
+      <div className="mb-12 flex w-full flex-col items-start lg:flex-row">
         <div className="w-full lg:w-6/12">
           <div className="md:mb-4">
             <Heading
@@ -71,8 +71,8 @@ function CaseStudy() {
           </div>
         </div>
       </div>
-      <div className="w-full md:w-8/12">
-        <Heading type="h3" classnames="mb-3 md:mb-5">
+      <div className="mb-32 w-full md:w-8/12">
+        <Heading type="h3" classnames="mb-3">
           High-level overview
         </Heading>
         <div className="mb-4">
@@ -88,6 +88,7 @@ function CaseStudy() {
           <Paragraph>{BATLCaseStudy.overview.impact}</Paragraph>
         </div>
       </div>
+      <DeepDive />
     </div>
   );
 }

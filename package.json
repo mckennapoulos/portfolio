@@ -12,7 +12,9 @@
     "@react-spring/web": "^9.7.4",
     "next": "14.2.5",
     "react": "^18",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18",
+    "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.53.0",
     "react-use-measure": "^2.1.1",
     "tailwind-merge": "^2.5.2"

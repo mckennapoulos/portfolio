@@ -25,8 +25,8 @@ function Footer() {
         </div>
 
         <Paragraph classnames={textCx}>
-          Built with Next.js and React. Styled with Tailwind. Managed by Sanity.
-          Deployed on Vercel.
+          Built with Next.js and React. Styled with Tailwind CSS. Managed by
+          Sanity. Deployed on Vercel.
         </Paragraph>
       </div>
     </div>

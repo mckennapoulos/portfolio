@@ -38,6 +38,9 @@ module.exports = {
         text: "#0b1b47",
         footer: "#5a4d3c",
       },
+      zIndex: {
+        top: "9999",
+      },
       dropShadow: {
         project: "-6px 6px 0px rgba(193, 197, 94, 1)",
         button: "-3px 3px 0px rgba(193, 197, 94, 1)",

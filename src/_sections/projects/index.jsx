@@ -53,7 +53,10 @@ const projects = [
 
 function Projects() {
   return (
-    <div className="mb-32 flex flex-col lg:flex-row lg:justify-between">
+    <div
+      id="projects"
+      className="mb-32 flex scroll-mt-20 flex-col lg:flex-row lg:justify-between"
+    >
       <div className="mb-5 w-full flex-col lg:mb-auto lg:w-3/12">
         <Heading type="h3" classnames="mb-5 lg:mb-10">
           Projects

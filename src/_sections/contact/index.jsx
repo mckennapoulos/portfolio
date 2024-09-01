@@ -11,7 +11,7 @@ import Confetti from "react-confetti";
 function Contact() {
   const { showConfetti, handleButtonClick } = useConfettiAnimation();
   return (
-    <div className="mb-10 flex w-full flex-col">
+    <div id="contact" className="mb-5 flex w-full scroll-mt-20 flex-col">
       <div className="mb-10">
         <Marquee autoFill>
           <div className="flex items-center">

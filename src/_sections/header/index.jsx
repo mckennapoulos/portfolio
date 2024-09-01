@@ -16,13 +16,13 @@ function Header() {
     <div className="z-top fixed flex h-14 w-full bg-background px-5">
       <nav className="flex w-full items-center justify-between">
         <a href="#">
-          <div className="flex items-center">
+          <div className="flex items-center hover:cursor-pointer">
             <Image src={Star} alt="Star logo" className="mr-2" />
             <span className="serif text-2xl italic">Mckenna Poulos</span>
           </div>
         </a>
         <div>
-          <ul className="flex items-center">
+          <ul className="hidden items-center md:flex">
             <NavItem location="#projects">Projects</NavItem>
             <NavItem location="#resume">Resume</NavItem>
             <NavItem location="#contact">Contact</NavItem>

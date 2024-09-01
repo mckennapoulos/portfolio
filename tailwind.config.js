@@ -39,12 +39,14 @@ module.exports = {
       },
       dropShadow: {
         project: "-6px 6px 0px rgba(193, 197, 94, 1)",
+        button: "-3px 3px 0px rgba(193, 197, 94, 1)",
         previewImg: "-3px 3px 5px rgba(11, 27, 71, .20)",
         resume: "-3px 1px 5px rgba(11, 27, 71, .20)",
       },
       transitionProperty: {
         shadow: "drop-shadow",
         height: "max-height",
+        transform: "transform",
       },
       keyframes: {
         movein: {

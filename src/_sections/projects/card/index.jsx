@@ -52,10 +52,7 @@ const Content = ({ title, href, description, categories }) => {
 
 function Card(props) {
   return (
-    <div
-      key={props.key}
-      className="group relative w-full rounded-2xl border border-solid border-secondary bg-background transition duration-500 ease-in-out hover:translate-x-[6px] hover:translate-y-[-6px] hover:cursor-pointer hover:drop-shadow-project"
-    >
+    <div className="group relative w-full rounded-2xl border border-solid border-secondary bg-background transition duration-500 ease-in-out hover:translate-x-[6px] hover:translate-y-[-6px] hover:cursor-pointer hover:drop-shadow-project">
       {props.href ? (
         <a href={props.href} target="_blank">
           <Content {...props} />

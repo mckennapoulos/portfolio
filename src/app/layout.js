@@ -1,3 +1,4 @@
+import Footer from "@/_sections/footer";
 import "./globals.css";
 
 import { JUANA } from "./styles/fonts";
@@ -14,7 +15,10 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/vrt4lcx.css" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

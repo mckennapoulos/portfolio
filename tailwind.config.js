@@ -36,6 +36,7 @@ module.exports = {
         tertiary: "#eeebe7",
         background: "#f5f3f1",
         text: "#0b1b47",
+        footer: "#5a4d3c",
       },
       dropShadow: {
         project: "-6px 6px 0px rgba(193, 197, 94, 1)",

@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${JUANA.variable} font-serif`}>
+    <html lang="en" className={`${JUANA.variable} scroll-smooth font-serif`}>
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/vrt4lcx.css" />
       </head>

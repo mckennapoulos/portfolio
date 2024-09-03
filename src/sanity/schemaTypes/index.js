@@ -1,6 +1,7 @@
-import profile from "./profile";
+import heading from "./heading";
 import project from "./project";
+import resume from "./resume";
 
 export const schema = {
-  types: [profile, project],
+  types: [heading, resume, project],
 };

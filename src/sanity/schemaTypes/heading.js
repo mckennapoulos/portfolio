@@ -25,8 +25,9 @@ const heading = {
         },
         {
           name: "description",
-          type: "text",
-          title: "Description for landing",
+          title: "Landing description",
+          type: "array",
+          of: [{ type: "block" }],
         },
       ],
     },

@@ -2,10 +2,8 @@
 import Image from "next/image";
 import { Heading, Paragraph } from "../../../_components/text";
 import { WordLink } from "../../../_components/word-link";
-import PreviewImg from "../../../../public/images/beach-break-preview.png";
 import { twMerge } from "tailwind-merge";
 import { Arrow } from "../../../_components/link";
-import { urlFor } from "@/sanity/lib/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { client } from "@/sanity/lib/client";
 

@@ -51,7 +51,7 @@ const projects = [
   },
 ];
 
-function Projects({ data }) {
+function Projects({ data, heading }) {
   return (
     <div
       id="projects"
@@ -59,18 +59,9 @@ function Projects({ data }) {
     >
       <div className="mb-5 w-full flex-col lg:mb-auto lg:w-3/12">
         <Heading type="h3" classnames="mb-5 lg:mb-10">
-          Projects
+          {heading.h3}
         </Heading>
-        <Paragraph>
-          A collection of web and mobile projects that showcase the fundamentals
-          of my work. Given the requirements of the client, I lead the design
-          process and iterate through colors and typography, logo variations,
-          wireframes, asset treatments, user flows and more, all to ensure the
-          final product satisfies each project goal.
-          <br />
-          <br />
-          Visit the live links or click into a case study to learn more.
-        </Paragraph>
+        <Paragraph>{heading.description}</Paragraph>
       </div>
       <div className="grid w-full gap-4 lg:w-8/12 lg:grid-cols-2">
         {data.map((project, i) => {

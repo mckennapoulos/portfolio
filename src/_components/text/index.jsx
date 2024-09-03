@@ -39,7 +39,7 @@ export function Heading({ type, children, classnames, serif }) {
 }
 
 export const Paragraph = ({ children, classnames }) => {
-  const cx = twMerge(`font-sans`, classnames);
+  const cx = twMerge(`font-sans whitespace-pre-wrap`, classnames);
   return <p className={cx}>{children}</p>;
 };
 

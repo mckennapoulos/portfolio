@@ -1,24 +1,30 @@
+"use client";
 import Image from "next/image";
 import { Heading, Paragraph } from "../../../_components/text";
 import { WordLink } from "../../../_components/word-link";
 import PreviewImg from "../../../../public/images/beach-break-preview.png";
 import { twMerge } from "tailwind-merge";
 import { Arrow } from "../../../_components/link";
+import { urlFor } from "@/sanity/lib/image";
+import { useNextSanityImage } from "next-sanity-image";
+import { client } from "@/sanity/lib/client";
 
-const PreviewImage = ({ classnames }) => (
-  <Image
-    src={PreviewImg}
-    alt="Preview image for Beach Break Surf Cafe"
-    width="auto"
-    height="auto"
-    className={twMerge(
-      "mb-2 border-2 border-solid border-secondary transition duration-500 ease-in-out md:opacity-0 md:group-hover:translate-x-[2px] md:group-hover:translate-y-[-3px] md:group-hover:opacity-100 md:group-hover:drop-shadow-previewImg",
-      classnames,
-    )}
-  />
-);
+const PreviewImage = ({ classnames, data }) => {
+  const imageProps = useNextSanityImage(client, data.file);
+  return (
+    <Image
+      {...imageProps}
+      alt={data.alt}
+      style={{ width: "100px", height: "auto" }}
+      className={twMerge(
+        "mb-2 border-2 border-solid border-secondary transition duration-500 ease-in-out md:opacity-0 md:group-hover:translate-x-[2px] md:group-hover:translate-y-[-3px] md:group-hover:opacity-100 md:group-hover:drop-shadow-previewImg",
+        classnames,
+      )}
+    />
+  );
+};
 
-const Content = ({ title, href, description, categories }) => {
+const Content = ({ title, href, description, categories, previewImage }) => {
   const linkStyle = href ? "group-hover:underline" : "";
   const headingCx = twMerge("xl:mt-5 mb-0 pb-0", linkStyle);
   return (
@@ -26,7 +32,10 @@ const Content = ({ title, href, description, categories }) => {
       <div className="mb-3">
         <div>
           <div className="flex items-start justify-between">
-            <PreviewImage classnames="block xl:hidden mb-5" />
+            <PreviewImage
+              classnames="block xl:hidden mb-5"
+              data={previewImage}
+            />
             {href && (
               <Arrow classnames="block md:hidden group-hover:translate-x-[5px]" />
             )}
@@ -38,7 +47,7 @@ const Content = ({ title, href, description, categories }) => {
               </Heading>
               {href && <Arrow classnames="hidden md:block" />}
             </div>
-            <PreviewImage classnames="hidden xl:block" />
+            <PreviewImage classnames="hidden xl:block" data={previewImage} />
           </div>
         </div>
         <WordLink words={categories} />

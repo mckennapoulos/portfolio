@@ -3,12 +3,14 @@ import Header from "@/_sections/header";
 import Landing from "@/_sections/landing";
 import Projects from "@/_sections/projects";
 import Resume from "@/_sections/resume";
+import { client } from "@/sanity/lib/client";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await client.fetch(`*[_type == "project"]`);
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-screen-2xl flex-col px-5 pb-5 pt-14">
       <Landing />
-      <Projects />
+      <Projects data={projects} />
       <Resume />
       <Contact />
     </main>

@@ -51,7 +51,7 @@ const projects = [
   },
 ];
 
-function Projects() {
+function Projects({ data }) {
   return (
     <div
       id="projects"
@@ -73,7 +73,7 @@ function Projects() {
         </Paragraph>
       </div>
       <div className="grid w-full gap-4 lg:w-8/12 lg:grid-cols-2">
-        {projects.map((project, i) => {
+        {data.map((project, i) => {
           return <ProjectCard key={i} {...project} />;
         })}
       </div>

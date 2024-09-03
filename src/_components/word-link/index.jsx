@@ -22,7 +22,7 @@ export function WordLink({ words, textCx, starCx, classnames }) {
               />
             )}
             <Heading type="h5" classnames={textCx}>
-              {word}
+              {word.name}
             </Heading>
           </div>
         );

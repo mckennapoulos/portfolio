@@ -1,4 +1,5 @@
 import CaseStudy from "@/_sections/case-study";
+import ProjectLayout from "./layout";
 
 export default function Project() {
   return (
@@ -7,3 +8,7 @@ export default function Project() {
     </main>
   );
 }
+
+Project.getLayout = function getLayout(page) {
+  return <ProjectLayout>{page}</ProjectLayout>;
+};

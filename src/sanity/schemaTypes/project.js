@@ -111,19 +111,34 @@ const project = {
           name: "discovery",
           title: "Discovery process block",
           type: "array",
-          of: [{ type: "block" }],
+          of: [
+            { type: "block" },
+            {
+              type: "image",
+            },
+          ],
         },
         {
           name: "desgin",
           title: "Design process block",
           type: "array",
-          of: [{ type: "block" }],
+          of: [
+            { type: "block" },
+            {
+              type: "image",
+            },
+          ],
         },
         {
           name: "development",
           title: "Development process block",
           type: "array",
-          of: [{ type: "block" }],
+          of: [
+            { type: "block" },
+            {
+              type: "image",
+            },
+          ],
         },
       ],
     },

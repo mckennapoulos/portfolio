@@ -1,6 +1,7 @@
 import { PortableText } from "@portabletext/react";
-import { Paragraph } from "../text";
+import { Heading, Paragraph } from "../text";
 import { twMerge } from "tailwind-merge";
+import { Link } from "../link";
 
 const myPortableTextComponents = {
   types: {
@@ -12,21 +13,29 @@ const myPortableTextComponents = {
         <div className="callToAction">{value.text}</div>
       ),
   },
-
+  block: {
+    h5: ({ children }) => (
+      <Heading
+        type="h5"
+        classnames="normal-case text-xl text-text font-bold mb-1"
+      >
+        {children}
+      </Heading>
+    ),
+    h6: ({ children }) => (
+      <Heading type="h6" classnames="mb-2">
+        {children}
+      </Heading>
+    ),
+  },
   marks: {
     // Ex. 2: rendering a custom `link` annotation
     link: ({ value, children }) => {
-      const target = (value?.href || "").startsWith("http")
-        ? "_blank"
-        : undefined;
+      // account for internal links
       return (
-        <a
-          href={value?.href}
-          target={target}
-          rel={target === "_blank" && "noindex nofollow"}
-        >
+        <Link location={value?.href} inline={true}>
           {children}
-        </a>
+        </Link>
       );
     },
   },

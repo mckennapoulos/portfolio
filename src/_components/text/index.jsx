@@ -25,7 +25,7 @@ export function Heading({ type, children, classnames, serif }) {
       return <h3 className={cx}>{children}</h3>;
     case "h4":
       cx = twMerge(
-        `font-sans tracking-tight text-2xl md:text-3xl pb-1 md:pb-auto`,
+        `font-sans tracking-tight text-3xl md:text-4xl pb-1 md:pb-auto`,
         classnames,
       );
       return <h4 className={cx}>{children}</h4>;
@@ -35,6 +35,10 @@ export function Heading({ type, children, classnames, serif }) {
         classnames,
       );
       return <h5 className={cx}>{children}</h5>;
+    case "h6":
+    default:
+      cx = twMerge(`font-sans text-base`, classnames);
+      return <h6 className={cx}>{children}</h6>;
   }
 }
 

@@ -6,11 +6,11 @@ import Resume from "@/_sections/resume";
 import { client } from "@/sanity/lib/client";
 
 export default async function Home() {
-  const projects =
-    await client.fetch(`*[_type == "project"]| order(_createdAt asc)
-  `);
+  const projects = await client.fetch(
+    `*[_type == "project"]| order(_createdAt asc)`,
+  );
   const resume = await client.fetch(
-    `*[_type == "resume"]| order(startTime desc)`,
+    `*[_type == "resume"]| order(_createdAt desc)`,
   );
   const heading = await client.fetch(`*[_type == "heading"][0]`);
 

@@ -1,6 +1,7 @@
 import { Heading, Paragraph } from "@/_components/text";
 import ExperienceCard from "./card";
 import { Link } from "@/_components/link";
+import Button from "@/_components/button";
 
 const ResumeContent = [
   {
@@ -92,7 +93,7 @@ const ResumeContent = [
   },
 ];
 
-function Resume() {
+function Resume({ data, heading }) {
   return (
     <div
       id="resume"
@@ -100,24 +101,16 @@ function Resume() {
     >
       <div className="mb-5 w-full flex-col lg:mb-auto lg:w-3/12">
         <Heading type="h3" classnames="mb-5 lg:mb-10">
-          Resume
+          {heading.h3}
         </Heading>
-        <Paragraph>
-          With an extensive professional history, I take each new opportunity as
-          a chance to expand my skills. I am passionate about working with kind,
-          collaborative individuals, and measure success in terms of effective
-          communication, personal growth and the timely delivery of scalable and
-          pixel-perfect features.
-          <br />
-          <br />
-          Dive into each of my experiences to learn more about what I achieved
-          in that role and what I took with me into my next.
-        </Paragraph>
-        <Link classnames="mt-5">View full resume</Link>
+        <Paragraph>{heading.description}</Paragraph>
+        <Link mobileButtonStyle classnames="mt-5">
+          View full resume
+        </Link>
       </div>
       <div className="flex w-full flex-col lg:w-8/12">
-        {ResumeContent.map((experience, i) => {
-          return <ExperienceCard key={i} {...experience} />;
+        {data.map((value, i) => {
+          return <ExperienceCard key={i} {...value} />;
         })}
       </div>
     </div>

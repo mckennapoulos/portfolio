@@ -1,7 +1,7 @@
 import { Heading, Paragraph } from "@/_components/text";
 import Hero from "./hero";
 import Checkerboard from "./checkerboard";
-import PortableText from "@/_components/portable-text";
+import PortableTextComponent from "@/_components/portable-text";
 
 function Landing({ heading }) {
   const skills = [
@@ -36,7 +36,7 @@ function Landing({ heading }) {
           practices
           <br className="hidden 2xl:block" /> top of mind.
         </Heading>
-        <PortableText
+        <PortableTextComponent
           blocks={heading.description}
           classnames="w-full md:w-8/12 mt-4 mb-8"
         />

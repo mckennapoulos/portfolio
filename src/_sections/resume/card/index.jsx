@@ -6,6 +6,8 @@ import { useSpring, animated } from "@react-spring/web";
 import { useState } from "react";
 import useMeasure from "react-use-measure";
 import { twMerge } from "tailwind-merge";
+import moment from "moment";
+import PortableTextComponent from "@/_components/portable-text";
 
 const CompanyLink = ({ href, children }) => {
   if (href) {
@@ -18,7 +20,19 @@ const CompanyLink = ({ href, children }) => {
   return children;
 };
 
-function Card({ title, date, description, company, tech, key }) {
+function FormatDate({ date }) {
+  const startTime = date.startTime.split("-");
+  const endTime = date.endTime.split("-");
+  if (date.yearOnly) {
+    return startTime[0] + " - " + endTime[0];
+  }
+
+  const startMonth = moment(startTime[1], "M").format("MMM");
+  const endMonth = moment(endTime[1], "M").format("MMM");
+  return startMonth + " - " + endMonth + " " + endTime[0];
+}
+
+function Card({ title, date, summary, company, tech, key }) {
   const [isOpen, setIsOpen] = useState(false);
   const [ref, bounds] = useMeasure();
 
@@ -41,7 +55,9 @@ function Card({ title, date, description, company, tech, key }) {
       className={cx}
     >
       <div>
-        <Label>{date}</Label>
+        <Label>
+          <FormatDate date={date} />
+        </Label>
         <div className="mb-8 mt-2 md:mt-4">
           <Heading type="h4" classnames="pb-0">
             {title}
@@ -56,7 +72,7 @@ function Card({ title, date, description, company, tech, key }) {
       </div>
       <animated.div style={contentAnimatedStyle}>
         <div ref={ref} className="pb-5">
-          <Paragraph>{description}</Paragraph>
+          <PortableTextComponent blocks={summary} />
           <Pills list={tech} />
         </div>
       </animated.div>

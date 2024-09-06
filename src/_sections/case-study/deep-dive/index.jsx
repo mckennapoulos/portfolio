@@ -3,8 +3,8 @@ import { Heading, Paragraph } from "@/_components/text";
 import { useEffect, useState } from "react";
 
 const NavLink = ({ contentId, children }) => {
-  const [active, setActive] = useState(null);
-  const sections = document.querySelectorAll("section");
+  // const [active, setActive] = useState(null);
+  // const sections = document.querySelectorAll("section");
 
   return (
     <div className="group flex items-center">

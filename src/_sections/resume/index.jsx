@@ -1,7 +1,6 @@
 import { Heading, Paragraph } from "@/_components/text";
 import ExperienceCard from "./card";
 import { Link } from "@/_components/link";
-import Button from "@/_components/button";
 
 const ResumeContent = [
   {

@@ -1,6 +1,6 @@
 import "../../globals.css";
 
-import { JUANA } from "../styles/fonts";
+import { JUANA } from "../../styles/fonts";
 
 export const metadata = {
   title: "Mckenna Poulos Portfolio",

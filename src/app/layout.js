@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/vrt4lcx.css" />
       </head>
       <body>
-        <Header />
+        {/* <Header /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

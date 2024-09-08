@@ -105,6 +105,7 @@ const project = {
       name: "linkOnly",
       title: "Only show as link",
       type: "boolean",
+      initialVale: false,
     },
     {
       name: "href",
@@ -174,8 +175,8 @@ const project = {
     },
     {
       name: "mockup",
-      title: "Mockup svg file",
-      type: "file",
+      title: "Mockup image",
+      type: "image",
     },
     defineField({
       name: "overview",
@@ -214,10 +215,37 @@ const project = {
           of: [BlockElement, customImage],
         },
         {
-          name: "desgin",
+          name: "design",
           title: "Design process block",
           type: "array",
           of: [BlockElement, customImage],
+        },
+        {
+          name: "desgin",
+          title: "Design process block - old",
+          type: "array",
+          of: [
+            BlockElement,
+            customImage,
+            defineArrayMember({
+              type: "object",
+              name: "calloutObject",
+              title: "callout section",
+              options: { hotspot: true },
+              fields: [
+                {
+                  name: "heading",
+                  type: "string",
+                  title: "heading for callout",
+                },
+                {
+                  name: "content",
+                  type: "array",
+                  of: [{ type: "block" }],
+                },
+              ],
+            }),
+          ],
         },
         {
           name: "development",

@@ -4,11 +4,15 @@ import Landing from "@/_sections/landing";
 import Projects from "@/_sections/projects";
 import Resume from "@/_sections/resume";
 import { client } from "@/sanity/lib/client";
+import { generateStaticParams } from "./project/[title]/page";
 
 export default async function Home() {
+  generateStaticParams();
   const projects = await client.fetch(
     `*[_type == "project"]| order(_createdAt asc)`,
   );
+
+  console.log("this is projects", projects);
   const resume = await client.fetch(
     `*[_type == "resume"]| order(_createdAt desc)`,
   );

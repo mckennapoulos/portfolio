@@ -11,6 +11,7 @@ import PortableTextComponent from "@/_components/portable-text";
 import { twMerge } from "tailwind-merge";
 import { SanityImage } from "@/_components/image";
 import { notFound } from "next/navigation";
+import InternalNav from "./internal-nav";
 
 function hasProcess(process) {
   return (
@@ -20,7 +21,7 @@ function hasProcess(process) {
   );
 }
 
-function CaseStudy({ data }) {
+function CaseStudy({ data, internalNav }) {
   if (!data) {
     notFound();
   }
@@ -36,7 +37,6 @@ function CaseStudy({ data }) {
     screens,
     process,
   } = data;
-  console.log("this is case study data", data);
   const mockUpProps = useNextSanityImage(client, mockup);
   const columns = overview?.length > 2 ? `md:grid-cols-3` : `md:grid-cols-2`;
 
@@ -60,40 +60,45 @@ function CaseStudy({ data }) {
               <span className="block md:hidden">{title}</span>
             </Heading>
             <Label classnames="text-primary ml-1 mt-1 sm:mt-none sm:ml-3">
-              01
+              0{internalNav.current.key + 1}
             </Label>
             <div className="mt-[-16px] lg:mt-auto lg:hidden">
               <Image
                 {...mockUpProps}
                 alt="mockup"
-                className="animate-moveup"
+                className="animate-moveup delay-500"
                 priority
               />
             </div>
           </div>
-          <InfoBlock
-            description={description}
-            team={team}
-            tech={tech}
-            duration={duration}
-          />
+          <div>
+            <InfoBlock
+              description={description}
+              team={team}
+              tech={tech}
+              duration={duration}
+              nav={internalNav}
+            />
+            <InternalNav data={internalNav} />
+          </div>
         </div>
         <div className="hidden w-full lg:block lg:w-6/12">
           <div className="relative lg:left-5 lg:overflow-hidden">
             <Image
               {...mockUpProps}
               alt="mockup"
-              className="animate-movein max-w-none"
+              className="animate-movein max-w-none delay-500"
               priority
             />
           </div>
         </div>
       </div>
-      <div className="mb-32 flex w-full flex-col">
-        <Heading type="h3" classnames="mb-3">
-          Overview
-        </Heading>
-        {overview && (
+      {overview && (
+        <div className="mb-32 flex w-full flex-col">
+          <Heading type="h3" classnames="mb-3">
+            Overview
+          </Heading>
+
           <div className={twMerge("grid w-full grid-cols-1 gap-4", columns)}>
             {overview.map((section, i) => {
               return (
@@ -109,8 +114,8 @@ function CaseStudy({ data }) {
               );
             })}
           </div>
-        )}
-      </div>
+        </div>
+      )}
       {hasProcess(process) && <DeepDive data={process} />}
       {screens && (
         <div>

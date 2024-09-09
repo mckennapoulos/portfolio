@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Star from "../../../public/icons/star.svg";
+import Link from "next/link";
+import ArrowLeft from "../../../public/icons/arrow-primary-left.svg";
 
 const NavItem = ({ location, children }) => {
   return (
@@ -11,7 +13,29 @@ const NavItem = ({ location, children }) => {
   );
 };
 
-function Header() {
+export function ProjectHeader() {
+  const textCx = "font-sans text-base text-primary font-bold";
+
+  return (
+    <div className="z-top fixed flex h-14 w-full bg-background px-5">
+      <nav className="flex w-full">
+        <Link href="/#projects" className="group flex items-center">
+          <Image src={ArrowLeft} alt="Left pointing arrow" />
+          <div
+            className={
+              "relative left-[-6.5px] h-[2px] w-[0px] rounded border border-primary bg-primary transition-all duration-500 ease-in-out group-hover:w-[20px]"
+            }
+          />
+          <div>
+            <span className={textCx}>Back to main</span>
+          </div>
+        </Link>
+      </nav>
+    </div>
+  );
+}
+
+export function MainHeader() {
   return (
     <div className="z-top fixed flex h-14 w-full bg-background px-5">
       <nav className="flex w-full items-center justify-between">
@@ -32,5 +56,3 @@ function Header() {
     </div>
   );
 }
-
-export default Header;

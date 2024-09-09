@@ -1,7 +1,7 @@
-import { ProjectHeader } from "@/_sections/header";
-import "../../globals.css";
+import Footer from "@/_sections/footer";
+import "../globals.css";
 
-import { JUANA } from "../../styles/fonts";
+import { MainHeader } from "@/_sections/header";
 
 export const metadata = {
   title: "Mckenna Poulos Portfolio",
@@ -12,8 +12,9 @@ export const metadata = {
 export default function ProjectLayout({ children }) {
   return (
     <>
-      <ProjectHeader />
+      <MainHeader />
       {children}
+      <Footer />
     </>
   );
 }

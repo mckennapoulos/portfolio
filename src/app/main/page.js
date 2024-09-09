@@ -4,7 +4,7 @@ import Landing from "@/_sections/landing";
 import Projects from "@/_sections/projects";
 import Resume from "@/_sections/resume";
 import { client } from "@/sanity/lib/client";
-import { generateStaticParams } from "./project/[slug]/page";
+import { generateStaticParams } from "../project/[slug]/page";
 
 export default async function Home() {
   generateStaticParams();

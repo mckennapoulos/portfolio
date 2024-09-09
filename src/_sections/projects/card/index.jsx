@@ -6,6 +6,7 @@ import { twMerge } from "tailwind-merge";
 import { Arrow } from "../../../_components/link";
 import { useNextSanityImage } from "next-sanity-image";
 import { client } from "@/sanity/lib/client";
+import Link from "next/link";
 
 const PreviewImage = ({ classnames, data }) => {
   const imageProps = useNextSanityImage(client, data.file);
@@ -22,7 +23,14 @@ const PreviewImage = ({ classnames, data }) => {
   );
 };
 
-const Content = ({ title, href, description, categories, previewImage }) => {
+const Content = ({
+  title,
+  href,
+  description,
+  categories,
+  previewImage,
+  linkOnly,
+}) => {
   const linkStyle = href ? "group-hover:underline" : "";
   const headingCx = twMerge("xl:mt-5 mb-0 pb-0", linkStyle);
   return (
@@ -34,7 +42,7 @@ const Content = ({ title, href, description, categories, previewImage }) => {
               classnames="block xl:hidden mb-5"
               data={previewImage}
             />
-            {href && (
+            {linkOnly && (
               <Arrow classnames="block md:hidden group-hover:translate-x-[5px]" />
             )}
           </div>
@@ -43,7 +51,7 @@ const Content = ({ title, href, description, categories, previewImage }) => {
               <Heading type="h4" classnames={headingCx}>
                 {title}
               </Heading>
-              {href && <Arrow classnames="hidden md:block" />}
+              {linkOnly && <Arrow classnames="hidden md:block" />}
             </div>
             <PreviewImage classnames="hidden xl:block" data={previewImage} />
           </div>
@@ -60,12 +68,14 @@ const Content = ({ title, href, description, categories, previewImage }) => {
 function Card(props) {
   return (
     <div className="group relative w-full rounded-2xl border border-solid border-secondary bg-background transition duration-500 ease-in-out hover:translate-x-[6px] hover:translate-y-[-6px] hover:cursor-pointer hover:drop-shadow-project">
-      {props.href ? (
+      {Boolean(props.linkOnly) ? (
         <a href={props.href} target="_blank">
           <Content {...props} />
         </a>
       ) : (
-        <Content {...props} />
+        <Link href={`/project/${props.slug}`}>
+          <Content {...props} />
+        </Link>
       )}
     </div>
   );

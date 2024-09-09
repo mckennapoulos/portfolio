@@ -20,9 +20,9 @@ export default async function Project({ params }) {
     `*[_type == "project"&&lower(@.slug)==lower("${slug}")][0]`,
   );
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-screen-2xl flex-col p-5">
+    <div className="mx-auto flex min-h-screen w-full max-w-screen-2xl flex-col p-5">
       <CaseStudy data={data} />
-    </main>
+    </div>
   );
 }
 

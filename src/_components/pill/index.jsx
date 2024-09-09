@@ -10,7 +10,9 @@ function Pills({ list }) {
   return (
     <div className="mt-3 flex flex-wrap">
       {list.map((text, i) => (
-        <Pill key={i}>{text.name}</Pill>
+        <div key={i}>
+          <Pill>{text.name}</Pill>
+        </div>
       ))}
     </div>
   );

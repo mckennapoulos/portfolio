@@ -15,8 +15,13 @@ export const InfoGroup = ({ label, text, classnames }) => {
   );
 };
 
-function InfoBlock({ description, tech, team: { role, count }, duration }) {
-  const memberCount = Array.apply("icon", Array(count));
+function InfoBlock({
+  description,
+  tech,
+  team: { role, memberCount },
+  duration,
+}) {
+  const count = Array.apply("icon", Array(memberCount));
   return (
     <div className="mb-10 lg:mb-auto">
       <div className="flex w-full flex-col-reverse justify-between rounded-2xl bg-tertiary px-5 py-8 md:flex-row md:px-9 md:py-12">
@@ -30,12 +35,12 @@ function InfoBlock({ description, tech, team: { role, count }, duration }) {
             <div className="mb-3 w-6/12">
               <Label classnames="uppercase mb-1">Team</Label>
               <div className="flex">
-                {memberCount.map((i) => {
+                {count.map((x, i) => {
                   return (
-                    <div key={i} className="">
+                    <div key={i}>
                       <Image
                         src={MemberIcon}
-                        alt="Human Icon"
+                        alt={`Human ${x}`}
                         className="ml-1 w-[14px] md:w-auto"
                       />
                     </div>

@@ -1,32 +1,45 @@
+"use client";
+
 import { Heading, Label, Paragraph } from "@/_components/text";
 import Image from "next/image";
-import batlMockup from "../../../public/mockup/BATL_mockup.svg";
 import InfoBlock, { InfoGroup } from "./info-block";
 import { Link } from "@/_components/link";
 import DeepDive from "./deep-dive";
+import { client } from "@/sanity/lib/client";
+import { useNextSanityImage } from "next-sanity-image";
+import PortableTextComponent from "@/_components/portable-text";
+import { twMerge } from "tailwind-merge";
+import { SanityImage } from "@/_components/image";
+import { notFound } from "next/navigation";
 
-const BATLCaseStudy = {
-  id: 2,
-  name: "BATL",
-  description:
-    "As a client of Scout Studio’s fall 2020 roster, a team of 6 designers and developers, lead by 1 project manager, underwent the development of a custom brand identity and information site.",
-  tech: ["React", "Contentful", "Figma", "Javascript"],
-  team: { role: "Lead Developer", count: 6 },
-  duration: "4 months",
-  overview: {
-    client: `BATL is Northeastern University’s Biopharmaceutical Analysis & Training Lab. They provide worldwide training, research and education to industries including biopharma, government and academia at their facilities based in the US and around the world. In 2020, BATL transformed part of its lab to house the University’s COVID-19 test center for students and faculty. 
+function hasProcess(process) {
+  return (
+    process?.design?.length ||
+    process?.discovery?.length ||
+    process?.development?.length
+  );
+}
 
-        BATL was brought on as a client to Northeastern’s student-led design studio, Scout, to undergo a semester-long design up haul – re-designing their entire brand identity and developing a new site. `,
-    problem:
-      "BATL is looking for a strong brand identify to solidify their place as a top regulatory global agency. This brand need to amplify their voice and highlight the pillars of their mission. When people visit the site, they need to be able to understand 3 things: 1. what batl is  and why they are important. 2. what batl can do for them. 3. How to reach batl. ",
-    impact:
-      "Delivered entire site + brand identity guidelines. Completed all requests and x y z. We used contentful, React app, google maps, figma, Font #1, Font #2 to reinvent BATL.  BATL’s online presence doubled. There is clear information and people can find it quickly. ",
-  },
-  process: `Long text markup`,
-  link: "https://batl.cos.northeastern.edu/",
-};
+function CaseStudy({ data }) {
+  if (!data) {
+    notFound();
+  }
+  const {
+    title,
+    description,
+    href,
+    mockup,
+    team,
+    tech,
+    overview,
+    duration,
+    screens,
+    process,
+  } = data;
+  console.log("this is case study data", data);
+  const mockUpProps = useNextSanityImage(client, mockup);
+  const columns = overview?.length > 2 ? `md:grid-cols-3` : `md:grid-cols-2`;
 
-function CaseStudy() {
   return (
     <div>
       <div className="mb-12 flex w-full flex-col items-start lg:flex-row">
@@ -34,36 +47,41 @@ function CaseStudy() {
           <div className="md:mb-4">
             <Heading
               type="h1"
-              classnames="text-[65px] sm:text-[20cqw] md:text-8xl leading-[.8] "
+              classnames="text-[65px] sm:text-[20cqw] md:text-8xl leading-[.8] normal-case"
             >
               <Link
-                location={BATLCaseStudy.link}
+                location={href}
                 classnames="hidden md:flex"
                 linkClass="group-hover:decoration-[6px]"
                 arrowClass="ml-4 w-[5cqw] lg:w-[50px] group-hover:translate-y-[-25px]"
               >
-                {BATLCaseStudy.name}
+                {title}
               </Link>
-              <span className="block md:hidden"> {BATLCaseStudy.name}</span>
+              <span className="block md:hidden">{title}</span>
             </Heading>
             <Label classnames="text-primary ml-1 mt-1 sm:mt-none sm:ml-3">
-              0{BATLCaseStudy.id + 1}
+              01
             </Label>
             <div className="mt-[-16px] lg:mt-auto lg:hidden">
               <Image
-                src={batlMockup}
+                {...mockUpProps}
                 alt="mockup"
                 className="animate-moveup"
                 priority
               />
             </div>
           </div>
-          <InfoBlock {...BATLCaseStudy} />
+          <InfoBlock
+            description={description}
+            team={team}
+            tech={tech}
+            duration={duration}
+          />
         </div>
         <div className="hidden w-full lg:block lg:w-6/12">
           <div className="relative lg:left-5 lg:overflow-hidden">
             <Image
-              src={batlMockup}
+              {...mockUpProps}
               alt="mockup"
               className="animate-movein max-w-none"
               priority
@@ -71,24 +89,59 @@ function CaseStudy() {
           </div>
         </div>
       </div>
-      <div className="mb-32 w-full md:w-8/12">
+      <div className="mb-32 flex w-full flex-col">
         <Heading type="h3" classnames="mb-3">
-          High-level overview
+          Overview
         </Heading>
-        <div className="mb-4">
-          <Label classnames="uppercase mb-2 text-base">the client</Label>
-          <Paragraph>{BATLCaseStudy.overview.client}</Paragraph>
-        </div>
-        <div className="mb-4">
-          <Label classnames="uppercase mb-2 text-base">the problem</Label>
-          <Paragraph>{BATLCaseStudy.overview.problem}</Paragraph>
-        </div>
-        <div className="mb-4">
-          <Label classnames="uppercase mb-2 text-base">the impact</Label>
-          <Paragraph>{BATLCaseStudy.overview.impact}</Paragraph>
-        </div>
+        {overview && (
+          <div className={twMerge("grid w-full grid-cols-1 gap-4", columns)}>
+            {overview.map((section, i) => {
+              return (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-primary bg-background px-8 py-16"
+                >
+                  <Paragraph classnames="tracking-light text-2xl mb-8">
+                    {section.title}
+                  </Paragraph>
+                  <PortableTextComponent blocks={section.content} />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
-      <DeepDive />
+      {hasProcess(process) && <DeepDive data={process} />}
+      {screens && (
+        <div>
+          <div className="flex w-full flex-col items-center">
+            <Heading type="h3" classnames="mb-4">
+              Screens
+            </Heading>
+            {screens.desktop && (
+              <div className="my-2 grid w-full grid-cols-2 gap-4 md:w-10/12">
+                {screens.desktop.map((image, i) => (
+                  <SanityImage {...image} key={i} />
+                ))}
+              </div>
+            )}
+            {screens.mobile && (
+              <div className="my-2 grid w-full grid-cols-2 gap-4 md:w-10/12 md:grid-cols-5">
+                {screens.mobile.map((image, i) => (
+                  <SanityImage {...image} key={i} />
+                ))}
+              </div>
+            )}
+            {screens.tablet && (
+              <div className="my-2 grid w-full grid-cols-2 gap-4 md:w-10/12">
+                {screens.tablet.map((image, i) => (
+                  <SanityImage {...image} key={i} />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

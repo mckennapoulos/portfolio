@@ -1,6 +1,8 @@
 "use client";
+import PortableTextComponent from "@/_components/portable-text";
 import { Heading, Paragraph } from "@/_components/text";
 import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const NavLink = ({ contentId, children }) => {
   // const [active, setActive] = useState(null);
@@ -8,9 +10,8 @@ const NavLink = ({ contentId, children }) => {
 
   return (
     <div className="group flex items-center">
-      <div className="mb-[8px] mr-2 h-[2px] w-[2px] border border-primary bg-primary transition-all ease-in-out group-hover:w-[20px]" />
+      <div className="mb-[8px] mr-2 h-[2px] w-[2px] border border-primary bg-primary transition-all ease-in-out group-hover:w-[32px]" />
       <a
-        // activeClass="font-bold"
         href={`#${contentId}`}
         className="md:pb-auto pb-2 font-sans text-xl font-normal capitalize tracking-tight text-primary transition-all ease-in-out group-hover:font-bold md:text-2xl"
       >
@@ -20,164 +21,82 @@ const NavLink = ({ contentId, children }) => {
   );
 };
 
-function DeepDive() {
+const SectionHeading = ({ text, offsetTop = true }) => (
+  <div className="flex align-baseline">
+    <div
+      className={twMerge(
+        "relative top-[1.7rem] h-[2px] w-[32px] border border-primary bg-primary",
+        offsetTop && "top-[2.7rem]",
+      )}
+    />
+    <Heading
+      type="h5"
+      classnames={twMerge(
+        "ml-2 font-bold mb-[-3rem] mt-4",
+        offsetTop && "mt-8 mb-[-2.5rem]",
+      )}
+    >
+      {text}
+    </Heading>
+  </div>
+);
+
+function DeepDive({ data }) {
+  const { discovery, design, development } = data;
+
   return (
-    <div>
-      <Heading type="h3" classnames="mb-3">
+    <div className="mb-16">
+      <Heading type="h3" classnames="mb-2">
         Diving Deeper
       </Heading>
 
       <div className="flex w-full flex-col lg:flex-row">
-        <div className="mb-4 mr-4 w-full lg:w-2/12">
-          <NavLink contentId="discovery">Discovery</NavLink>
-          <NavLink contentId="process">Design Process</NavLink>
-          <NavLink contentId="development">Development</NavLink>
+        <div className="sticky mb-4 mr-4 mt-3 w-full lg:w-2/12">
+          {discovery?.length && (
+            <NavLink contentId="discovery">Discovery</NavLink>
+          )}
+          {design?.length && (
+            <NavLink contentId="process">Design Process</NavLink>
+          )}
+          {development?.length && (
+            <NavLink contentId="development">Development</NavLink>
+          )}
         </div>
-        <div className="h-[48rem] w-full overflow-scroll scroll-smooth border border-primary bg-white p-4 lg:w-10/12">
-          <div id="discovery" className="mb-4">
-            <section>
-              <Heading type="h4">Discovery</Heading>
-              <Paragraph>
-                My goal is to bring your ideas to life in a digital space. From
-                brand identity development to outlining intuitive user
-                experiences and complete web development, I am passionate about
-                building personalized products for clients. Given my degree in
-                Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features.
-              </Paragraph>
-            </section>
-          </div>
-          <div id="process" className="mb-4">
-            <section>
-              <Heading type="h4">Process</Heading>
-              <Paragraph>
-                My goal is to bring your ideas to life in a digital space. From
-                brand identity development to outlining intuitive user
-                experiences and complete web development, I am passionate about
-                building personalized products for clients. Given my degree in
-                Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features.
-              </Paragraph>
-            </section>
-          </div>
-          <div id="development" className="mb-4">
-            <section>
-              <Heading type="h4">Development</Heading>
-              <Paragraph>
-                My goal is to bring your ideas to life in a digital space. From
-                brand identity development to outlining intuitive user
-                experiences and complete web development, I am passionate about
-                building personalized products for clients. Given my degree in
-                Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features. My goal is to bring your ideas to life in
-                a digital space. From brand identity development to outlining
-                intuitive user experiences and complete web development, I am
-                passionate about building personalized products for clients.
-                Given my degree in Computer Science and Design{" "}
-                <span className="italic">
-                  (concentration in Interaction Design and Web Development)
-                </span>{" "}
-                and over 6 years of design and development experience, I have
-                fluency in the tools and skills needed to architect and deliver
-                high-quality features.
-              </Paragraph>
-            </section>
-          </div>
+        <div className="w-full overflow-scroll scroll-smooth lg:w-8/12">
+          {discovery && (
+            <div id="discovery" className="mb-4">
+              <section>
+                <SectionHeading text="Discovery" offsetTop={false} />
+                <PortableTextComponent
+                  blocks={discovery}
+                  classnames="first:mt-2"
+                />
+              </section>
+            </div>
+          )}
+          {process && (
+            <div id="process" className="mb-4">
+              <section>
+                <SectionHeading text="Process" />
+
+                <PortableTextComponent
+                  blocks={design}
+                  classnames="first:text-pink"
+                />
+              </section>
+            </div>
+          )}
+          {development && (
+            <div id="development" className="mb-4">
+              <section>
+                <SectionHeading text="Development" />
+                <PortableTextComponent
+                  blocks={development}
+                  classnames="first:mt-2"
+                />
+              </section>
+            </div>
+          )}
         </div>
       </div>
     </div>

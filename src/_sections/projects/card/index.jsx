@@ -31,7 +31,7 @@ const Content = ({
   previewImage,
   linkOnly,
 }) => {
-  const linkStyle = href ? "group-hover:underline" : "";
+  const linkStyle = linkOnly ? "group-hover:underline" : "";
   const headingCx = twMerge("xl:mt-5 mb-0 pb-0", linkStyle);
   return (
     <div className="p-7 xl:p-8">

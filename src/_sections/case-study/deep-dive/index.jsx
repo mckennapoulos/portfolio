@@ -1,7 +1,6 @@
 "use client";
 import PortableTextComponent from "@/_components/portable-text";
-import { Heading, Paragraph } from "@/_components/text";
-import { useEffect, useState } from "react";
+import { Heading } from "@/_components/text";
 import { twMerge } from "tailwind-merge";
 
 const NavLink = ({ contentId, children }) => {

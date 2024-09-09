@@ -7,15 +7,17 @@ export async function generateStaticParams() {
     `*[_type == "project"]| order(_createdAt asc)`,
   );
 
-  return projects.map((project) => ({
-    title: project.title,
-  }));
+  return projects.map((project) => {
+    if (project.slug) {
+      return { slug: project.slug };
+    }
+  });
 }
 
 export default async function Project({ params }) {
-  const { title } = params;
+  const { slug } = params;
   const data = await client.fetch(
-    `*[_type == "project"&&lower(@.title)==lower("${title}")][0]`,
+    `*[_type == "project"&&lower(@.slug)==lower("${slug}")][0]`,
   );
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-screen-2xl flex-col p-5">

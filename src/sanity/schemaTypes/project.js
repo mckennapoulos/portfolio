@@ -70,14 +70,6 @@ const BlockElement = {
           <span className="text-primary">{children}</span>
         ),
       },
-      {
-        title: "Callout",
-        value: "callout",
-        icon: BiSolidMegaphone,
-        component: ({ children }) => (
-          <span className="bg-tertiary">{children}</span>
-        ),
-      },
     ],
   },
 };
@@ -93,6 +85,11 @@ const project = {
       title: "Project title",
       type: "string",
       validation: (rule) => rule.required(),
+    },
+    {
+      name: "slug",
+      title: "Project url slug",
+      type: "string",
     },
     {
       name: "description",
@@ -218,19 +215,13 @@ const project = {
           name: "design",
           title: "Design process block",
           type: "array",
-          of: [BlockElement, customImage],
-        },
-        {
-          name: "desgin",
-          title: "Design process block - old",
-          type: "array",
           of: [
             BlockElement,
             customImage,
             defineArrayMember({
               type: "object",
-              name: "calloutObject",
-              title: "callout section",
+              name: "callout",
+              title: "callout section!",
               options: { hotspot: true },
               fields: [
                 {

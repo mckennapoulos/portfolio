@@ -34,7 +34,7 @@ export function ProjectHeader() {
   const textCx = "font-sans text-base text-primary font-bold";
 
   return (
-    <div className="z-top fixed flex h-14 w-full bg-background px-5">
+    <div className="z-top fixed flex h-14 w-full bg-background">
       <nav className="mx-auto flex w-full max-w-screen-2xl px-5">
         <Link href="/#projects" className="group flex items-center">
           <Image src={ArrowLeft} alt="Left pointing arrow" />
@@ -57,7 +57,7 @@ export function MainHeader() {
   return (
     <div className="z-top fixed mx-auto flex w-full overflow-hidden md:h-14">
       <nav className="mx-auto flex w-full max-w-screen-2xl items-baseline justify-between bg-background px-5 md:items-center">
-        <a href="#">
+        <a href="#" className="relative top-[3px] md:top-0 md:flex">
           <div className="mt-2 flex items-center hover:cursor-pointer md:mt-auto">
             <Image src={Star} alt="Star logo" className="mr-2" />
             <span className="serif text-2xl italic">Mckenna Poulos</span>

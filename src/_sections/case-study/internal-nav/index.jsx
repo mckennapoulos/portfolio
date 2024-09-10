@@ -8,7 +8,7 @@ export default function InternalNav({ data }) {
 
   return (
     <div className="flex w-full justify-between">
-      <div className="mt-4">
+      <div className="mb-4 md:mb-0 md:mt-4">
         <Link
           href={`/project/${data.prev.slug}`}
           className="group flex items-center"
@@ -24,7 +24,7 @@ export default function InternalNav({ data }) {
           </div>
         </Link>
       </div>
-      <div className="mt-4">
+      <div className="mb-4 md:mb-0 md:mt-4">
         <Link
           href={`/project/${data.next.slug}`}
           className="group flex items-center"

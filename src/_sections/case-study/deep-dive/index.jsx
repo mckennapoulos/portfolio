@@ -61,9 +61,9 @@ function DeepDive({ data }) {
             <NavLink contentId="development">Development</NavLink>
           )}
         </div>
-        <div className="w-full overflow-scroll scroll-smooth lg:w-8/12">
+        <div className="w-full scroll-smooth lg:w-8/12">
           {discovery && (
-            <div id="discovery" className="mb-4">
+            <div id="discovery" className="mb-4 scroll-mt-14">
               <section>
                 <SectionHeading text="Discovery" offsetTop={false} />
                 <PortableTextComponent
@@ -74,7 +74,7 @@ function DeepDive({ data }) {
             </div>
           )}
           {process && (
-            <div id="process" className="mb-4">
+            <div id="process" className="mb-4 scroll-mt-12">
               <section>
                 <SectionHeading text="Process" />
 
@@ -86,7 +86,7 @@ function DeepDive({ data }) {
             </div>
           )}
           {development && (
-            <div id="development" className="mb-4">
+            <div id="development" className="mb-4 scroll-mt-12">
               <section>
                 <SectionHeading text="Development" />
                 <PortableTextComponent

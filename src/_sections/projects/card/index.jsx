@@ -25,7 +25,6 @@ const PreviewImage = ({ classnames, data }) => {
 
 const Content = ({
   title,
-  href,
   description,
   categories,
   previewImage,

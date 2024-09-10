@@ -7,7 +7,7 @@ function Button(props) {
   const disabledStyles =
     "aria-disabled:cursor-not-allowed aria-disabled:bg-secondary text-text border-none";
   const cx = twMerge(
-    "font-sm w-full  md:w-auto rounded border border-primary bg-primary p-2 font-sans font-bold uppercase text-white  transition-all duration-500 ease-in-out",
+    "font-sm w-full rounded border border-primary bg-primary p-3 font-sans font-bold uppercase text-white transition-all duration-500 ease-in-out md:w-auto",
     disabled ? disabledStyles : hoverStyles,
     classnames,
   );

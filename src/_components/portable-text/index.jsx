@@ -46,7 +46,12 @@ const myPortableTextComponents = {
     link: ({ value, children }) => {
       // account for internal links
       return (
-        <Link location={value?.href} inline={true} classnames="mt-2">
+        <Link
+          location={value?.href}
+          inline={true}
+          mobileButtonStyle={true}
+          classnames="mt-4 md:mt-2"
+        >
           {children}
         </Link>
       );

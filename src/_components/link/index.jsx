@@ -47,11 +47,32 @@ export function Link({
 
   if (inline) {
     return (
-      <span className={cx}>
+      <span
+        className={twMerge(
+          cx,
+          mobileButtonStyle &&
+            "baseline mx-auto flex justify-center md:m-0 md:block",
+        )}
+      >
         <a href={location} target="_blank">
           <span className={linkCx}>{children}</span>
         </a>
-        <Arrow variant="primary" classnames={arrowClass} />
+        {mobileButtonStyle && (
+          <Image
+            src={WhiteArrow}
+            alt="Northeast pointing arrow!"
+            width={12}
+            className="ml-1 flex md:hidden"
+          />
+        )}
+        {/* TODO: Clean up conditional mobile button style bc i think i always want it */}
+        <Arrow
+          variant="primary"
+          classnames={twMerge(
+            mobileButtonStyle && "hidden md:block",
+            arrowClass,
+          )}
+        />
       </span>
     );
   }
@@ -69,7 +90,7 @@ export function Link({
             src={WhiteArrow}
             alt="Northeast pointing arrow!"
             width={12}
-            className="ml-1 block md:hidden"
+            className="ml-1 flex md:hidden"
           />
         )}
       </div>

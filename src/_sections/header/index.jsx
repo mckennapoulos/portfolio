@@ -1,12 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import Star from "../../../public/icons/star.svg";
 import Link from "next/link";
 import ArrowLeft from "../../../public/icons/arrow-primary-left.svg";
+import { Nav } from "./mobile-nav";
+import { twMerge } from "tailwind-merge";
+import { useState } from "react";
 
-const NavItem = ({ location, children }) => {
+export const NavItem = ({ location, children, classnames, handleClick }) => {
   return (
-    <a href={location}>
-      <li className="ml-4 font-sans text-xl uppercase tracking-tight hover:font-bold">
+    <a
+      href={location}
+      onClick={() => {
+        if (handleClick) {
+          handleClick();
+        }
+      }}
+    >
+      <li
+        className={twMerge(
+          "ml-4 font-sans text-xl uppercase tracking-tight hover:font-bold",
+          classnames,
+        )}
+      >
         {children}
       </li>
     </a>
@@ -36,16 +53,18 @@ export function ProjectHeader() {
 }
 
 export function MainHeader() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="z-top fixed mx-auto flex h-14 w-full">
-      <nav className="mx-auto flex w-full max-w-screen-2xl items-center justify-between bg-background px-5">
+    <div className="z-top fixed mx-auto flex w-full overflow-hidden md:h-14">
+      <nav className="mx-auto flex w-full max-w-screen-2xl items-baseline justify-between bg-background px-5 md:items-center">
         <a href="#">
-          <div className="flex items-center hover:cursor-pointer">
+          <div className="mt-2 flex items-center hover:cursor-pointer md:mt-auto">
             <Image src={Star} alt="Star logo" className="mr-2" />
             <span className="serif text-2xl italic">Mckenna Poulos</span>
           </div>
         </a>
-        <div>
+        <div className="flex items-center">
+          <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
           <ul className="hidden items-center md:flex">
             <NavItem location="#projects">Projects</NavItem>
             <NavItem location="#resume">Resume</NavItem>

@@ -34,7 +34,7 @@ export function Link({
   mobileButtonStyle,
 }) {
   const mobileButtonStyleCx =
-    "hover:drop-shadow-button rounded border border-primary hover:cursor-pointer md:hover:cursor-auto bg-primary p-2 md:p-0 font-sans font-bold uppercase text-white hover:translate-x-[3px] hover:translate-y-[-3px] md:border-none md:bg-transparent md:normal-case md:hover:transform-none md:hover:drop-shadow-none transition ease-in-out duration-500";
+    "hover:drop-shadow-button rounded border border-primary hover:cursor-pointer md:hover:cursor-auto bg-primary p-3 md:p-0 font-sans font-bold uppercase text-white hover:translate-x-[3px] hover:translate-y-[-3px] md:border-none md:bg-transparent md:normal-case md:hover:transform-none md:hover:drop-shadow-none transition ease-in-out duration-500";
   const cx = twMerge(
     "group flex items-baseline",
     mobileButtonStyleCx,

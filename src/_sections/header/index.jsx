@@ -18,7 +18,7 @@ export function ProjectHeader() {
 
   return (
     <div className="z-top fixed flex h-14 w-full bg-background px-5">
-      <nav className="flex w-full">
+      <nav className="mx-auto flex w-full max-w-screen-2xl px-5">
         <Link href="/#projects" className="group flex items-center">
           <Image src={ArrowLeft} alt="Left pointing arrow" />
           <div
@@ -37,8 +37,8 @@ export function ProjectHeader() {
 
 export function MainHeader() {
   return (
-    <div className="z-top fixed flex h-14 w-full bg-background px-5">
-      <nav className="flex w-full items-center justify-between">
+    <div className="z-top fixed mx-auto flex h-14 w-full">
+      <nav className="mx-auto flex w-full max-w-screen-2xl items-center justify-between bg-background px-5">
         <a href="#">
           <div className="flex items-center hover:cursor-pointer">
             <Image src={Star} alt="Star logo" className="mr-2" />

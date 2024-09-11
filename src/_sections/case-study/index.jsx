@@ -71,13 +71,14 @@ function CaseStudy({ data, internalNav }) {
               />
             </div>
           </div>
-          <div className="flex flex-col-reverse md:flex-col">
+          <div className="flex flex-col-reverse lg:flex-col">
             <InfoBlock
               description={description}
               team={team}
               tech={tech}
               duration={duration}
               nav={internalNav}
+              href={href}
             />
             <InternalNav data={internalNav} />
           </div>

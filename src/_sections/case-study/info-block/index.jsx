@@ -4,6 +4,7 @@ import { Label, Paragraph } from "@/_components/text";
 import { twMerge } from "tailwind-merge";
 import MemberIcon from "../../../../public/icons/member.svg";
 import Image from "next/image";
+import { Link } from "@/_components/link";
 
 export const InfoGroup = ({ label, text, classnames }) => {
   const cx = twMerge("mb-3", classnames);
@@ -20,6 +21,7 @@ function InfoBlock({
   tech,
   team: { role, memberCount },
   duration,
+  href,
 }) {
   const count = Array.apply("icon", Array(memberCount));
   return (
@@ -54,7 +56,15 @@ function InfoBlock({
           </div>
         </div>
       </div>
-      <Button text="Visit Site" classnames="block md:hidden mt-4" />
+      {href && (
+        <Link
+          location={href}
+          classnames="flex md:hidden mt-4"
+          mobileButtonStyle={true}
+        >
+          View project
+        </Link>
+      )}
     </div>
   );
 }

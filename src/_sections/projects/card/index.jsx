@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Heading, Paragraph } from "../../../_components/text";
+import { Heading, Label, Paragraph } from "../../../_components/text";
 import { WordLink } from "../../../_components/word-link";
 import { twMerge } from "tailwind-merge";
 import { Arrow } from "../../../_components/link";
@@ -29,16 +29,24 @@ const Content = ({
   categories,
   previewImage,
   linkOnly,
+  wip,
 }) => {
   const linkStyle = linkOnly ? "group-hover:underline" : "";
   const headingCx = twMerge("xl:mt-5 mb-0 pb-0", linkStyle);
   return (
     <div className="p-7 xl:p-8">
+      {wip && (
+        <div className="relative top-[-1.75rem] xl:top-[-2rem]">
+          <div className="absolute top-0 w-fit rounded-bl-md rounded-br-md bg-primary p-2 pt-4 text-white">
+            <Label classnames="text-white uppercase">Coming soon</Label>
+          </div>
+        </div>
+      )}
       <div className="mb-3">
         <div>
           <div className="flex items-start justify-between">
             <PreviewImage
-              classnames="block xl:hidden mb-5"
+              classnames={twMerge("block xl:hidden mb-5", wip && "invisible")}
               data={previewImage}
             />
             {linkOnly && (
@@ -52,7 +60,10 @@ const Content = ({
               </Heading>
               {linkOnly && <Arrow classnames="hidden md:block" />}
             </div>
-            <PreviewImage classnames="hidden xl:block" data={previewImage} />
+            <PreviewImage
+              classnames={twMerge("hidden xl:block", wip && "invisible")}
+              data={previewImage}
+            />
           </div>
         </div>
         <WordLink words={categories} />

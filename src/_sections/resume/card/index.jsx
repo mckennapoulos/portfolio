@@ -12,7 +12,7 @@ import PortableTextComponent from "@/_components/portable-text";
 const CompanyLink = ({ href, children }) => {
   if (href) {
     return (
-      <a href={href} target="_blank" className="underline hover:font-bold">
+      <a href={href} target="_blank" className="hover:underline">
         {children}
       </a>
     );
@@ -64,7 +64,7 @@ function Card({ title, date, summary, company, tech, key }) {
           </Heading>
           <div className="flex">
             <Paragraph classnames="text-sm pr-[1.5px]">&#x40;</Paragraph>
-            <CompanyLink href={company.href}>
+            <CompanyLink href={company.link}>
               <Paragraph classnames="text-sm">{company.name}</Paragraph>
             </CompanyLink>
           </div>

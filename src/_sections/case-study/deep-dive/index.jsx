@@ -99,7 +99,7 @@ function DeepDive({ data }) {
               className="mb-4 scroll-mt-40 lg:scroll-mt-14"
             >
               <section>
-                <SectionHeading text="Process" />
+                <SectionHeading text="Design process" />
 
                 <PortableTextComponent
                   blocks={design}

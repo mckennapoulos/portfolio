@@ -1,56 +1,6 @@
 import ProjectCard from "./card";
 import { Heading, Paragraph } from "@/_components/text";
 
-const projects = [
-  {
-    title: "Beach Break Surf Cafe",
-    href: "https://www.beachbreakcr.com",
-    description:
-      "Custom site development, branding revamp, and physical assets for local Costa Rican cafe.",
-    categories: ["Web design", "Web development", "Branding"],
-  },
-  {
-    title: "Future List",
-    href: "https://futurelist.co/",
-    description:
-      "Custom site development and concept features for FutureList.io, a job board dedicated to finding opportunities in climate tech industries. ",
-    categories: ["Web design", "Web development"],
-  },
-  {
-    title: "BATL",
-    href: null,
-    description:
-      "Brand identity development and custom site for a global research lab that offers experiential learning and credentialing programs to train the pharmaceutical industry's workforce.",
-    categories: [
-      "Web design",
-      "Web development",
-      "Brand Identity Development",
-      "UI/UX Design",
-    ],
-  },
-  {
-    title: "Beach Break Surf Cafe",
-    href: null,
-    description:
-      "Custom site development, branding revamp, and physical assets for local Costa Rican cafe.",
-    categories: ["Web design", "Web development", "Branding"],
-  },
-  {
-    title: "Beach Break Surf Cafe",
-    href: "null",
-    description:
-      "Custom site development, branding revamp, and physical assets for local Costa Rican cafe.",
-    categories: ["Web design", "Web development", "Branding"],
-  },
-  {
-    title: "Beach Break Surf Cafe",
-    href: "https://www.beachbreakcr.com",
-    description:
-      "Custom site development, branding revamp, and physical assets for local Costa Rican cafe.",
-    categories: ["Web design", "Web development", "Branding"],
-  },
-];
-
 function Projects({ data, heading }) {
   return (
     <div

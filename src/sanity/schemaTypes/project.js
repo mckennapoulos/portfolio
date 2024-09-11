@@ -92,6 +92,11 @@ const project = {
       type: "string",
     },
     {
+      name: "wip",
+      title: "is this a WIP case study?",
+      type: "boolean",
+    },
+    {
       name: "description",
       title: "Short description",
       type: "text",

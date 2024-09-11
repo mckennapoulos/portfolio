@@ -55,7 +55,7 @@ export default async function Project({ params }) {
     `*[_type == "project"&&lower(@.slug)==lower("${slug}")][0]`,
   );
   const projectList = await client.fetch(
-    `*[_type == "project" && slug != null] | order(_createdAt asc)`,
+    `*[_type == "project" && slug != null && wip == false] | order(_createdAt asc)`,
   );
   const index = CreateNav(projectList, data.title);
 

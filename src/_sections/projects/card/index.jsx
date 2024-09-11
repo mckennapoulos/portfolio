@@ -65,16 +65,25 @@ const Content = ({
 };
 
 function Card(props) {
+  const isWIP = props.wip;
   return (
-    <div className="group relative w-full rounded-2xl border border-solid border-secondary bg-background transition duration-500 ease-in-out hover:translate-x-[6px] hover:translate-y-[-6px] hover:cursor-pointer hover:drop-shadow-project">
+    <div
+      className={twMerge(
+        "group relative w-full rounded-2xl border border-solid border-secondary bg-background transition duration-500 ease-in-out",
+        !isWIP &&
+          "hover:translate-x-[6px] hover:translate-y-[-6px] hover:cursor-pointer hover:drop-shadow-project",
+      )}
+    >
       {Boolean(props.linkOnly) ? (
         <a href={props.href} target="_blank">
           <Content {...props} />
         </a>
-      ) : (
+      ) : !props.wip ? (
         <Link href={`/project/${props.slug}`}>
           <Content {...props} />
         </Link>
+      ) : (
+        <Content {...props} />
       )}
     </div>
   );

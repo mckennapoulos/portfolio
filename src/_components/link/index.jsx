@@ -51,7 +51,7 @@ export function Link({
         className={twMerge(
           cx,
           mobileButtonStyle &&
-            "baseline mx-auto flex justify-center md:m-0 md:block",
+            "baseline mx-auto flex justify-center md:justify-normal",
         )}
       >
         <a href={location} target="_blank">

@@ -30,6 +30,7 @@ function CaseStudy({ data, internalNav }) {
     description,
     href,
     mockup,
+    mockup2,
     team,
     tech,
     overview,
@@ -69,6 +70,11 @@ function CaseStudy({ data, internalNav }) {
                 priority
                 quality={100}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              <SanityImage
+                {...mockup2.customImage}
+                alt={mockup2.customImage.alt}
+                classnames="animate-moveup delay-500"
               />
             </div>
           </div>

@@ -175,6 +175,12 @@ const project = {
       ],
       validation: (rule) => rule.required(),
     },
+    defineField({
+      name: "mockup2",
+      type: "object",
+      title: "mockup image for a project",
+      fields: [customImage],
+    }),
     {
       name: "mockup",
       title: "Mockup image",

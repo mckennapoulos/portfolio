@@ -39,7 +39,6 @@ function CaseStudy({ data, internalNav }) {
   } = data;
   const mockUpProps = useNextSanityImage(client, mockup);
   const columns = overview?.length > 2 ? `md:grid-cols-3` : `md:grid-cols-2`;
-
   return (
     <div>
       <div className="mb-12 flex w-full flex-col items-start lg:flex-row">
@@ -68,6 +67,8 @@ function CaseStudy({ data, internalNav }) {
                 alt="mockup"
                 className="animate-moveup delay-500"
                 priority
+                quality={100}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
@@ -89,7 +90,8 @@ function CaseStudy({ data, internalNav }) {
               {...mockUpProps}
               alt="mockup"
               className="animate-movein max-w-none delay-500"
-              priority
+              quality={100}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </div>

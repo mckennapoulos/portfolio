@@ -1,8 +1,7 @@
 "use client";
 
 import { Heading, Label, Paragraph } from "@/_components/text";
-import Image from "next/image";
-import InfoBlock, { InfoGroup } from "./info-block";
+import InfoBlock from "./info-block";
 import { Link } from "@/_components/link";
 import DeepDive from "./deep-dive";
 import { client } from "@/sanity/lib/client";
@@ -63,14 +62,6 @@ function CaseStudy({ data, internalNav }) {
               0{internalNav.current.key + 1}
             </Label>
             <div className="mt-[-16px] lg:mt-auto lg:hidden">
-              <Image
-                {...mockUpProps}
-                alt="mockup"
-                className="animate-moveup delay-500"
-                priority
-                quality={100}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
               {mockup2 && (
                 <SanityImage
                   {...mockup2.customImage}
@@ -94,13 +85,13 @@ function CaseStudy({ data, internalNav }) {
         </div>
         <div className="hidden w-full lg:block lg:w-6/12">
           <div className="relative lg:left-5 lg:overflow-hidden">
-            <Image
-              {...mockUpProps}
-              alt="mockup"
-              className="animate-movein max-w-none delay-500"
-              quality={100}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
+            {mockup2 && (
+              <SanityImage
+                {...mockup2.customImage}
+                alt={mockup2.customImage.alt}
+                classnames="animate-moveup delay-500"
+              />
+            )}
           </div>
         </div>
       </div>

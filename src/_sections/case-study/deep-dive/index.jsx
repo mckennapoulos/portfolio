@@ -52,7 +52,7 @@ function DeepDive({ data }) {
     ) {
       setActiveNav("development");
     }
-  }, [scrollTop, scrolling]);
+  }, [scrollTop, scrolling, design, development, discovery]);
 
   return (
     <div className="mb-16">

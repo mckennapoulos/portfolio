@@ -9,7 +9,7 @@ const myPortableTextComponents = {
     customImage: ({ value }) => {
       return <SanityImage {...value} alt={value.alt} classnames="my-12" />;
     },
-    image: ({ value }) => <img src={value.imageUrl} />,
+    image: ({ value }) => <Image src={value.imageUrl} />,
     callout: ({ value }) => {
       return (
         <div className="w-full bg-tertiary px-12 py-16">

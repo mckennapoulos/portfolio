@@ -1,5 +1,5 @@
 import { defineField, defineArrayMember } from "sanity";
-import { BiFile, BiSolidMegaphone, BiHighlight } from "react-icons/bi";
+import { BiFile, BiHighlight } from "react-icons/bi";
 
 const customImage = {
   name: "customImage",
@@ -247,7 +247,28 @@ const project = {
           name: "development",
           title: "Development process block",
           type: "array",
-          of: [BlockElement, customImage],
+          of: [
+            BlockElement,
+            customImage,
+            defineArrayMember({
+              type: "object",
+              name: "callout",
+              title: "callout section!",
+              options: { hotspot: true },
+              fields: [
+                {
+                  name: "heading",
+                  type: "string",
+                  title: "heading for callout",
+                },
+                {
+                  name: "content",
+                  type: "array",
+                  of: [{ type: "block" }],
+                },
+              ],
+            }),
+          ],
         },
       ],
     },

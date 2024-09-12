@@ -71,11 +71,13 @@ function CaseStudy({ data, internalNav }) {
                 quality={100}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-              <SanityImage
-                {...mockup2.customImage}
-                alt={mockup2.customImage.alt}
-                classnames="animate-moveup delay-500"
-              />
+              {mockup2 && (
+                <SanityImage
+                  {...mockup2.customImage}
+                  alt={mockup2.customImage.alt}
+                  classnames="animate-moveup delay-500"
+                />
+              )}
             </div>
           </div>
           <div className="flex flex-col-reverse lg:flex-col">

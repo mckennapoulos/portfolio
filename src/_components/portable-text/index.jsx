@@ -3,13 +3,14 @@ import { Heading, Paragraph } from "../text";
 import { twMerge } from "tailwind-merge";
 import { Link } from "../link";
 import { SanityImage } from "../image";
+import Image from "next/image";
 
 const myPortableTextComponents = {
   types: {
     customImage: ({ value }) => {
       return <SanityImage {...value} alt={value.alt} classnames="my-12" />;
     },
-    image: ({ value }) => <Image src={value.imageUrl} />,
+    image: ({ value }) => <Image src={value.imageUrl} alt={"my image"} />,
     callout: ({ value }) => {
       return (
         <div className="w-full bg-tertiary px-12 py-16">

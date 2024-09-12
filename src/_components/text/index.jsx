@@ -12,7 +12,7 @@ export function Heading({ type, children, classnames, serif }) {
     case "h2":
       cx = twMerge(
         serif
-          ? `font-serif normal-case text-[36px] leading-[54px] lg:text-5xl`
+          ? `font-serif normal-case text-[36px] leading-[44px] md:leading-[54px] lg:text-5xl`
           : `font-sans uppercase tracking-tight text-2xl`,
         classnames,
       );

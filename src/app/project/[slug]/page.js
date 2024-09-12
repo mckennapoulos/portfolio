@@ -60,7 +60,7 @@ export default async function Project({ params }) {
   const index = CreateNav(projectList, data.title);
 
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-screen-2xl flex-col p-5 pt-14">
+    <div className="mx-auto flex min-h-screen w-full max-w-screen-2xl flex-col px-3 pt-14 md:px-5">
       <CaseStudy data={data} internalNav={index} />
     </div>
   );

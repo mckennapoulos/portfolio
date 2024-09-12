@@ -10,10 +10,12 @@ const myPortableTextComponents = {
     customImage: ({ value }) => {
       return <SanityImage {...value} alt={value.alt} classnames="my-12" />;
     },
-    image: ({ value }) => <Image src={value.imageUrl} alt={"my image"} />,
+    image: ({ value }) => (
+      <Image src={value.imageUrl} alt={"my image"} quality={100} />
+    ),
     callout: ({ value }) => {
       return (
-        <div className="w-full bg-tertiary px-12 py-16">
+        <div className="w-full bg-tertiary px-8 py-10 md:px-12 md:py-16">
           <Paragraph classnames="font-sans text-3xl tracking-tight text-primary font-bold normal-case mb-4">
             {value.heading}
           </Paragraph>

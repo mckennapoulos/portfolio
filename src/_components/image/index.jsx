@@ -15,6 +15,7 @@ export const SanityImage = ({ asset, alt, classnames }) => {
       sizes="(max-width: 800px) 100vw, 800px"
       className={classnames}
       alt={alt}
+      quality={100}
     />
   );
 };

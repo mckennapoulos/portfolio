@@ -18,7 +18,7 @@ export default async function Home() {
   const heading = await client.fetch(`*[_type == "heading"][0]`);
 
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-screen-2xl flex-col px-5 pb-5 pt-14">
+    <div className="mx-auto flex min-h-screen w-full max-w-screen-2xl flex-col px-3 pb-5 pt-14 md:px-5">
       <Landing heading={heading.landing} />
       <Projects data={projects} heading={heading.project} />
       <Resume data={resume} heading={heading.resume} />

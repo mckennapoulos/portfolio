@@ -1,4 +1,3 @@
-import Button from "@/_components/button";
 import Pills from "@/_components/pill";
 import { Label, Paragraph } from "@/_components/text";
 import { twMerge } from "tailwind-merge";

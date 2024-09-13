@@ -1,8 +1,12 @@
+"use client";
+
 import { Heading, Paragraph } from "@/_components/text";
 import ExperienceCard from "./card";
 import { Link } from "@/_components/link";
+import useFileUrl from "@/_util/useFileUrl";
 
-function Resume({ data, heading }) {
+function Resume({ data, heading, pdf }) {
+  const link = useFileUrl(pdf);
   return (
     <div
       id="resume"
@@ -13,13 +17,17 @@ function Resume({ data, heading }) {
           {heading.h3}
         </Heading>
         <Paragraph>{heading.description}</Paragraph>
-        <Link mobileButtonStyle classnames="mt-5">
+        <Link location={link} mobileButtonStyle classnames="mt-5">
           View full resume
         </Link>
       </div>
       <div className="flex w-full flex-col lg:w-8/12">
         {data.map((value, i) => {
-          return <ExperienceCard key={i} {...value} />;
+          return (
+            <div key={i}>
+              <ExperienceCard {...value} />
+            </div>
+          );
         })}
       </div>
     </div>

@@ -1,7 +1,8 @@
+import files from "./files";
 import heading from "./heading";
 import project from "./project";
 import resume from "./resume";
 
 export const schema = {
-  types: [heading, resume, project],
+  types: [heading, resume, project, files],
 };

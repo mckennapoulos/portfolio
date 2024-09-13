@@ -4,6 +4,7 @@ import Button from "@/_components/button";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
+import emailjs from "@emailjs/browser";
 
 const Input = ({ register, name, options, type, error, disabled }) => {
   const hasError = Boolean(error);
@@ -41,13 +42,34 @@ function Form({ onSuccess }) {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = () => {
-    onSuccess();
-    setSent(true);
+  const onSubmit = (data) => {
+    const templateParams = {
+      from_name: data.name,
+      from_email: data.email,
+      message: data.message,
+    };
+
+    console.log(
+      process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
+      process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
+      templateParams,
+    );
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY,
+      )
+      .then(() => {
+        onSuccess();
+        setSent(true);
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -81,18 +103,32 @@ function Form({ onSuccess }) {
         />
 
         <div className="mb-4 flex flex-col">
-          <label htmlFor="message" className="font-sm mb-1 font-sans font-bold">
+          <label
+            htmlFor="message"
+            className="font-sm mb-1 font-sans font-bold capitalize"
+          >
             Message
+            <span className="font-serif text-primary">*</span>
           </label>
+
           <textarea
             id="message"
-            aria-disabled={sent}
             disabled={sent}
-            {...register("message")}
-            className={
-              "border-text h-52 rounded border px-3 py-2 font-sans aria-disabled:cursor-not-allowed aria-disabled:bg-tertiary"
-            }
+            aria-disabled={sent}
+            aria-invalid={Boolean(errors.message)}
+            {...register("message", {
+              required: "Don't forget your message!",
+            })}
+            className={twMerge(
+              "border-text h-52 rounded border px-3 py-2 font-sans aria-disabled:cursor-not-allowed aria-disabled:bg-tertiary",
+              errors.message && "border-primary",
+            )}
           />
+          {errors.message && (
+            <p className="font-xs font-sans text-primary">
+              {errors.message.message}
+            </p>
+          )}
         </div>
       </div>
       <Button

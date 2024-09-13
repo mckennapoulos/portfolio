@@ -27,7 +27,7 @@ function Landing({ heading }) {
       <div className="">
         <Heading type="h3">{heading.h3}</Heading>
         <Heading type="h2" serif={true} classnames="w-full md:w-9/12">
-          I craft custom digital spaces using
+          I build custom web apps using
           <br className="hidden 2xl:block" />{" "}
           <span className="italic">thoughtful</span> design,{" "}
           <span className="italic">responsive</span> layout, and

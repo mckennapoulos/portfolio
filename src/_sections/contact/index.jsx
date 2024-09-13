@@ -40,8 +40,8 @@ function Contact() {
               accessibility overhaul, latest UX finds, cool websites, your
               favorite dinner recipe, latest NWSL news, surfing, starting an
               herb garden, the best local WFH coffee spots in San Diego — I want
-              to talk about it! <br /> <br /> Leave a message and let’s get the
-              conversation going.
+              to talk about it! <br /> <br />
+              Leave a message and let’s get the conversation going.
             </Paragraph>
           </div>
           <Form onSuccess={handleButtonClick} />

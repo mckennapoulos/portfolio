@@ -56,6 +56,7 @@ function Form({ onSuccess }) {
       process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
       process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
       templateParams,
+      process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY,
     );
 
     emailjs

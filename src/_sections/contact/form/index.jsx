@@ -53,6 +53,7 @@ function Form({ onSuccess }) {
     };
 
     console.log(
+      "new",
       process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
       process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
       templateParams,

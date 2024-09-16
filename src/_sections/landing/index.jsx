@@ -14,7 +14,7 @@ function Landing({ heading }) {
     "Content Management Systems",
     "GraphQL",
     "Java",
-    "Adobe Create Suite",
+    "Adobe Creative Suite",
     "Jest + Automation Testing",
     "Git/Github",
     "Figma",

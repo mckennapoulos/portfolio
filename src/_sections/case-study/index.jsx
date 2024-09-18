@@ -89,7 +89,7 @@ function CaseStudy({ data, internalNav }) {
               <SanityImage
                 {...mockup2.customImage}
                 alt={mockup2.customImage.alt}
-                classnames="animate-moveup delay-500"
+                classnames="animate-movein max-w-none delay-500"
               />
             )}
           </div>

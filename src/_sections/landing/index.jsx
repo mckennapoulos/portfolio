@@ -24,7 +24,7 @@ function Landing({ heading }) {
   return (
     <div className="mb-32">
       <Hero />
-      <div className="">
+      <div>
         <Heading type="h3">{heading.h3}</Heading>
         <Heading type="h2" serif={true} classnames="w-full md:w-9/12">
           I build custom web apps using

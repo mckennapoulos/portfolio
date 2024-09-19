@@ -62,10 +62,15 @@ module.exports = {
           "0%": { opacity: "0", transform: "translatey(50px)" },
           "100%": { opacity: "1", transform: "translatey(0px)" },
         },
+        slideup: {
+          "0%": { opacity: "0", transform: "translatey(20px)" },
+          "100%": { opacity: "1", transform: "translatey(0px)" },
+        },
       },
       animation: {
         movein: "movein 3s ease-in-out ",
         moveup: "moveup 3s ease-in-out ",
+        slideup: "slideup 1.5s ease-in-out forwards var(--delay, 0)",
       },
     },
   },

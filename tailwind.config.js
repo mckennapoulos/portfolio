@@ -62,10 +62,17 @@ module.exports = {
           "0%": { opacity: "0", transform: "translatey(50px)" },
           "100%": { opacity: "1", transform: "translatey(0px)" },
         },
+        slidein: {
+          "0%": { opacity: "0", transform: "translatex(-20px)" },
+          "75%": { opacity: "1", transform: "scale(1.05)" },
+
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
       },
       animation: {
         movein: "movein 3s ease-in-out ",
         moveup: "moveup 3s ease-in-out ",
+        slidein: "slidein 1.75s ease-in-out forwards var(--delay, 0)",
       },
     },
   },

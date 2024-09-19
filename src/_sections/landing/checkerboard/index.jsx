@@ -1,14 +1,49 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { useScrollAnimation } from "@/_util/useScrollAnimation";
 
-export function SkillsCheckerboard({ skills, myRef, isVisible }) {
-  const [play, setPlay] = useState(false);
+function getAnimationDelay(width, i) {
+  if (!width) {
+    return 0;
+  }
+
+  if (width >= 1240) {
+    // account for window margins
+    // xl screen
+    return Math.floor(i / 6) * 0.25;
+  } else if (width >= 984) {
+    // lg screen
+    return Math.floor(i / 5) * 0.25;
+  } else if (width >= 600) {
+    // sm screen
+    return Math.floor(i / 3) * 0.5;
+  } else {
+    return Math.floor(i / 2) * 0.5;
+  }
+}
+
+export function SkillsCheckerboard({ skills }) {
+  const sessionKey = "checkerboardAnimationPlayed";
+  const { play, ref } = useScrollAnimation(sessionKey);
+  const [width, setWidth] = useState();
+  const [showCheckerboard, setShowCheckerboard] = useState(false);
+
   useEffect(() => {
-    if (isVisible) {
-      setPlay(true);
+    window.addEventListener("beforeunload", () => {
+      sessionStorage.removeItem(sessionKey);
+    });
+
+    if (sessionStorage.getItem(sessionKey)) {
+      setShowCheckerboard(true);
     }
-  }, [isVisible]);
+  }, []);
+
+  useEffect(() => {
+    setWidth(ref.current.getBoundingClientRect().width);
+  }, [ref]);
+
   const checkerboard =
     "bg-white [&:nth-child(4n+1)]:bg-tertiary [&:nth-child(4n)]:bg-tertiary";
   const smCheckerboard =
@@ -18,10 +53,11 @@ export function SkillsCheckerboard({ skills, myRef, isVisible }) {
 
   return (
     <div
-      ref={myRef}
+      ref={ref}
       className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"
     >
       {skills.map((skill, i) => {
+        const delay = getAnimationDelay(width, i).toString();
         return (
           <div
             key={i}
@@ -30,9 +66,10 @@ export function SkillsCheckerboard({ skills, myRef, isVisible }) {
               checkerboard,
               smCheckerboard,
               xlCheckerboard,
-              play && "xl:animate-slidein xl:opacity-0",
+              !showCheckerboard && "opacity-0",
+              play && "animate-slideup",
             )}
-            style={{ "--delay": (i % 6) * 0.25 + "s" }}
+            style={{ "--delay": delay + "s" }}
           >
             <p className="m-auto p-2 font-serif text-2xl font-extrabold italic leading-[1] text-primary md:text-4xl">
               {skill}

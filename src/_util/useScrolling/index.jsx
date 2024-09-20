@@ -1,4 +1,4 @@
-const { useState, useEffect } = require("react");
+import { useEffect, useState } from "react";
 
 export function useScrolling() {
   const [scrolling, setScrolling] = useState(false);

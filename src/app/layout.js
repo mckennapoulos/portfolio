@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${JUANA.variable} scroll-smooth font-serif`}>
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/vrt4lcx.css" />
+        <meta property="og:image" content="/images/preview.png" />
       </head>
       <body>{children}</body>
     </html>
